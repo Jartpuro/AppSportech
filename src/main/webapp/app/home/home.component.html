@@ -4,9 +4,9 @@
   </div>
 
   <div class="col-md-9">
-    <h1 class="display-4"><span sportechappTranslate="home.title">Welcome, Java Hipster!</span> (Sportechapp)</h1>
+    <h1 class="display-4"><span sportechappTranslate="home.title">Welcome, Sportech Offer!</span> (Sportech Offer)</h1>
 
-    <p class="lead" sportechappTranslate="home.subtitle">This is your homepage</p>
+    <p class="lead" sportechappTranslate="home.subtitle">Vamos a tu ritmo</p>
 
     <div [ngSwitch]="account !== null">
       <div class="alert alert-success" *ngSwitchCase="true">
@@ -20,7 +20,7 @@
       </div>
 
       <div class="alert alert-warning" *ngSwitchCase="false">
-        <span sportechappTranslate="global.messages.info.authenticated.prefix">If you want to </span>
+        <span sportechappTranslate="global.messages.info.authenticated.prefix">Are you ready for adventure </span>
         <a class="alert-link" (click)="login()" sportechappTranslate="global.messages.info.authenticated.link">sign in</a
         ><span sportechappTranslate="global.messages.info.authenticated.suffix"
           >, you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
@@ -36,53 +36,18 @@
       </div>
     </div>
 
-    <p sportechappTranslate="home.question">If you have any question on JHipster:</p>
+    <p sportechappTranslate="home.question">Do you want to see more of us?:</p>
 
     <ul>
       <li>
-        <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" sportechappTranslate="home.link.homepage"
-          >JHipster homepage</a
-        >
-      </li>
-      <li>
         <a
-          href="https://stackoverflow.com/tags/jhipster/info"
+          href="https://www.facebook.com/SportechOfferOfficial/"
           target="_blank"
           rel="noopener noreferrer"
-          sportechappTranslate="home.link.stackoverflow"
-          >JHipster on Stack Overflow</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/jhipster/generator-jhipster/issues?state=open"
-          target="_blank"
-          rel="noopener noreferrer"
-          sportechappTranslate="home.link.bugtracker"
-          >JHipster bug tracker</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://gitter.im/jhipster/generator-jhipster"
-          target="_blank"
-          rel="noopener noreferrer"
-          sportechappTranslate="home.link.chat"
-          >JHipster public chat room</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer" sportechappTranslate="home.link.follow"
-          >follow @jhipster on Twitter</a
+          sportechappTranslate="home.link.homepage"
+          >Sportech Offer Facebook</a
         >
       </li>
     </ul>
-
-    <p>
-      <span sportechappTranslate="home.like">If you like JHipster, don't forget to give us a star on</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" sportechappTranslate="home.github"
-        >GitHub</a
-      >!
-    </p>
   </div>
 </div>
