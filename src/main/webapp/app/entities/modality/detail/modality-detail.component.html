@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="modality">
+      <h2 data-cy="modalityDetailsHeading"><span sportechappTranslate="sportechappApp.modality.detail.title">Modality</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ modality.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.modality.modalityName">Modality Name</span></dt>
+        <dd>
+          <span>{{ modality.modalityName }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.modality.modalityColor">Modality Color</span></dt>
+        <dd>
+          <span>{{ modality.modalityColor }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.modality.modalityState">Modality State</span></dt>
+        <dd>
+          <span sportechappTranslate="{{ 'sportechappApp.State.' + modality.modalityState }}">{{ modality.modalityState }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/modality', modality.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

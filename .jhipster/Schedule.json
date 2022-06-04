@@ -1,0 +1,71 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604044350",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "schedule",
+  "fields": [
+    {
+      "fieldName": "startTime",
+      "fieldType": "Duration",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endTime",
+      "fieldType": "Duration",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Schedule",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "scheduleVersion",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "scheduleVersion",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "modalityName",
+      "otherEntityName": "modality",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "modality",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "dayName",
+      "otherEntityName": "day",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "day",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "courseModule",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "courseModule",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "classroom",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "classroom",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "trainer",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "trainer",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

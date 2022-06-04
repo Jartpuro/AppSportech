@@ -1,0 +1,110 @@
+<div>
+  <h2 id="page-heading" data-cy="CourseModuleHeading">
+    <span sportechappTranslate="sportechappApp.courseModule.home.title">Course Modules</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span sportechappTranslate="sportechappApp.courseModule.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-course-module"
+        [routerLink]="['/course-module/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span sportechappTranslate="sportechappApp.courseModule.home.createLabel"> Create a new Course Module </span>
+      </button>
+    </div>
+  </h2>
+
+  <sportechapp-alert-error></sportechapp-alert-error>
+
+  <sportechapp-alert></sportechapp-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="courseModules?.length === 0">
+    <span sportechappTranslate="sportechappApp.courseModule.home.notFound">No courseModules found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="courseModules && courseModules.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr sportechappSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" sportechappSortBy="id"><span sportechappTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" sportechappSortBy="course.courseNumber">
+            <span sportechappTranslate="sportechappApp.courseModule.course">Course</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="module.id">
+            <span sportechappTranslate="sportechappApp.courseModule.module">Module</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let courseModule of courseModules; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/course-module', courseModule.id, 'view']">{{ courseModule.id }}</a>
+          </td>
+          <td>
+            <div *ngIf="courseModule.course">
+              <a [routerLink]="['/course', courseModule.course?.id, 'view']">{{ courseModule.course?.courseNumber }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="courseModule.module">
+              <a [routerLink]="['/module', courseModule.module?.id, 'view']">{{ courseModule.module?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/course-module', courseModule.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/course-module', courseModule.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(courseModule)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="courseModules && courseModules.length > 0">
+    <div class="d-flex justify-content-center">
+      <sportechapp-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></sportechapp-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

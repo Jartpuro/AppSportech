@@ -1,0 +1,94 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-schedule-version-heading"
+        data-cy="ScheduleVersionCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.scheduleVersion.home.createOrEditLabel"
+      >
+        Create or edit a Schedule Version
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.scheduleVersion.versionNumber" for="field_versionNumber"
+            >Version Number</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="versionNumber"
+            id="field_versionNumber"
+            data-cy="versionNumber"
+            formControlName="versionNumber"
+          />
+          <div
+            *ngIf="
+              editForm.get('versionNumber')!.invalid && (editForm.get('versionNumber')!.dirty || editForm.get('versionNumber')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('versionNumber')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('versionNumber')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 40 }"
+            >
+              This field cannot be longer than 40 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.scheduleVersion.versionState" for="field_versionState"
+            >Version State</label
+          >
+          <select class="form-control" name="versionState" formControlName="versionState" id="field_versionState" data-cy="versionState">
+            <option [ngValue]="null">{{ 'sportechappApp.State.null' | translate }}</option>
+            <option *ngFor="let state of stateValues" [value]="state">{{ 'sportechappApp.State.' + state | translate }}</option>
+          </select>
+          <div
+            *ngIf="editForm.get('versionState')!.invalid && (editForm.get('versionState')!.dirty || editForm.get('versionState')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('versionState')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

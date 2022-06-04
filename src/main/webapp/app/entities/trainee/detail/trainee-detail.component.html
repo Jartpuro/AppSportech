@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="trainee">
+      <h2 data-cy="traineeDetailsHeading"><span sportechappTranslate="sportechappApp.trainee.detail.title">Trainee</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ trainee.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.trainee.customer">Customer</span></dt>
+        <dd>
+          <div *ngIf="trainee.customer">
+            <a [routerLink]="['/customer', trainee.customer?.id, 'view']">{{ trainee.customer?.id }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.trainee.trainingStatus">Training Status</span></dt>
+        <dd>
+          <div *ngIf="trainee.trainingStatus">
+            <a [routerLink]="['/training-status', trainee.trainingStatus?.id, 'view']">{{ trainee.trainingStatus?.statusName }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.trainee.course">Course</span></dt>
+        <dd>
+          <div *ngIf="trainee.course">
+            <a [routerLink]="['/course', trainee.course?.id, 'view']">{{ trainee.course?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/trainee', trainee.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

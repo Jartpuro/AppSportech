@@ -1,0 +1,35 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604042750",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "training_status",
+  "fields": [
+    {
+      "fieldName": "statusName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "stateTraining",
+      "fieldType": "State",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE (Activo),INACTIVE (Inactivo)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TrainingStatus",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "trainee",
+      "otherEntityRelationshipName": "trainingStatus",
+      "relationshipName": "trainee",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

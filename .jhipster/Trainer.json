@@ -1,0 +1,48 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604044750",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "trainer",
+  "fields": [
+    {
+      "fieldName": "trainerState",
+      "fieldType": "State",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE (Activo),INACTIVE (Inactivo)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Trainer",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "areaTrainer",
+      "otherEntityRelationshipName": "trainer",
+      "relationshipName": "areaTrainer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "bondingTrainer",
+      "otherEntityRelationshipName": "trainer",
+      "relationshipName": "bondingTrainer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "trainer",
+      "relationshipName": "schedule",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "trainer",
+      "relationshipName": "customer",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

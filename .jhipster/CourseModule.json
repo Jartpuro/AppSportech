@@ -1,0 +1,37 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604043650",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "course_module",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CourseModule",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "courseModule",
+      "relationshipName": "schedule",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "courseNumber",
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "courseModule",
+      "relationshipName": "course",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "module",
+      "otherEntityRelationshipName": "courseModule",
+      "relationshipName": "module",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Schedule.
+    -->
+    <changeSet id="20220604044350-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="schedule_version_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule__schedule_version_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="schedule_version"/>
+
+        <addForeignKeyConstraint baseColumnNames="modality_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule__modality_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="modality"/>
+
+        <addForeignKeyConstraint baseColumnNames="day_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule__day_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="day"/>
+
+        <addForeignKeyConstraint baseColumnNames="course_module_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule__course_module_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="course_module"/>
+
+        <addForeignKeyConstraint baseColumnNames="classroom_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule__classroom_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="classroom"/>
+
+        <addForeignKeyConstraint baseColumnNames="trainer_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule__trainer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trainer"/>
+    </changeSet>
+</databaseChangeLog>

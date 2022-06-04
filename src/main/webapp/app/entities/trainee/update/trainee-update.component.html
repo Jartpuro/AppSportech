@@ -1,0 +1,121 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-trainee-heading"
+        data-cy="TraineeCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.trainee.home.createOrEditLabel"
+      >
+        Create or edit a Trainee
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.trainee.customer" for="field_customer">Customer</label>
+          <select class="form-control" id="field_customer" data-cy="customer" name="customer" formControlName="customer">
+            <option *ngIf="!editForm.get('customer')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="customerOption.id === editForm.get('customer')!.value?.id ? editForm.get('customer')!.value : customerOption"
+              *ngFor="let customerOption of customersSharedCollection; trackBy: trackCustomerById"
+            >
+              {{ customerOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['customer'])!.invalid && (editForm.get(['customer'])!.dirty || editForm.get(['customer'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['customer'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.trainee.trainingStatus" for="field_trainingStatus"
+            >Training Status</label
+          >
+          <select
+            class="form-control"
+            id="field_trainingStatus"
+            data-cy="trainingStatus"
+            name="trainingStatus"
+            formControlName="trainingStatus"
+          >
+            <option *ngIf="!editForm.get('trainingStatus')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="
+                trainingStatusOption.id === editForm.get('trainingStatus')!.value?.id
+                  ? editForm.get('trainingStatus')!.value
+                  : trainingStatusOption
+              "
+              *ngFor="let trainingStatusOption of trainingStatusesSharedCollection; trackBy: trackTrainingStatusById"
+            >
+              {{ trainingStatusOption.statusName }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            editForm.get(['trainingStatus'])!.invalid &&
+            (editForm.get(['trainingStatus'])!.dirty || editForm.get(['trainingStatus'])!.touched)
+          "
+        >
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['trainingStatus'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.trainee.course" for="field_course">Course</label>
+          <select class="form-control" id="field_course" data-cy="course" name="course" formControlName="course">
+            <option *ngIf="!editForm.get('course')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="courseOption.id === editForm.get('course')!.value?.id ? editForm.get('course')!.value : courseOption"
+              *ngFor="let courseOption of coursesSharedCollection; trackBy: trackCourseById"
+            >
+              {{ courseOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['course'])!.invalid && (editForm.get(['course'])!.dirty || editForm.get(['course'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['course'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

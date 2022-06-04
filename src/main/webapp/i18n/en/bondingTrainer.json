@@ -1,0 +1,29 @@
+{
+  "sportechappApp": {
+    "bondingTrainer": {
+      "home": {
+        "title": "Bonding Trainers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bonding Trainer",
+        "createOrEditLabel": "Create or edit a Bonding Trainer",
+        "notFound": "No Bonding Trainers found"
+      },
+      "created": "A new Bonding Trainer is created with identifier {{ param }}",
+      "updated": "A Bonding Trainer is updated with identifier {{ param }}",
+      "deleted": "A Bonding Trainer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bonding Trainer {{ id }}?"
+      },
+      "detail": {
+        "title": "Bonding Trainer"
+      },
+      "id": "ID",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "boundingSchedule": "Bounding Schedule",
+      "year": "Year",
+      "trainer": "Trainer",
+      "bonding": "Bonding"
+    }
+  }
+}

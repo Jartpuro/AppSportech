@@ -1,0 +1,29 @@
+{
+  "sportechappApp": {
+    "trainingProgram": {
+      "home": {
+        "title": "Training Programs",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Training Program",
+        "createOrEditLabel": "Crear o editar Training Program",
+        "notFound": "Ningún Training Programs encontrado"
+      },
+      "created": "Un nuevo Training Program ha sido creado con el identificador {{ param }}",
+      "updated": "Un Training Program ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Training Program ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Training Program {{ id }}?"
+      },
+      "detail": {
+        "title": "Training Program"
+      },
+      "id": "ID",
+      "programCode": "Program Code",
+      "programVersion": "Program Version",
+      "programName": "Program Name",
+      "programInitials": "Program Initials",
+      "programState": "Program State",
+      "course": "Course"
+    }
+  }
+}

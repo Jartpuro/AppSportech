@@ -1,0 +1,237 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-schedule-heading"
+        data-cy="ScheduleCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.schedule.home.createOrEditLabel"
+      >
+        Create or edit a Schedule
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.startTime" for="field_startTime">Start Time</label>
+          <input type="text" class="form-control" name="startTime" id="field_startTime" data-cy="startTime" formControlName="startTime" />
+          <div *ngIf="editForm.get('startTime')!.invalid && (editForm.get('startTime')!.dirty || editForm.get('startTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('startTime')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('startTime')?.errors?.number"
+              sportechappTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.endTime" for="field_endTime">End Time</label>
+          <input type="text" class="form-control" name="endTime" id="field_endTime" data-cy="endTime" formControlName="endTime" />
+          <div *ngIf="editForm.get('endTime')!.invalid && (editForm.get('endTime')!.dirty || editForm.get('endTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('endTime')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('endTime')?.errors?.number"
+              sportechappTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.scheduleVersion" for="field_scheduleVersion"
+            >Schedule Version</label
+          >
+          <select
+            class="form-control"
+            id="field_scheduleVersion"
+            data-cy="scheduleVersion"
+            name="scheduleVersion"
+            formControlName="scheduleVersion"
+          >
+            <option *ngIf="!editForm.get('scheduleVersion')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="
+                scheduleVersionOption.id === editForm.get('scheduleVersion')!.value?.id
+                  ? editForm.get('scheduleVersion')!.value
+                  : scheduleVersionOption
+              "
+              *ngFor="let scheduleVersionOption of scheduleVersionsSharedCollection; trackBy: trackScheduleVersionById"
+            >
+              {{ scheduleVersionOption.id }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            editForm.get(['scheduleVersion'])!.invalid &&
+            (editForm.get(['scheduleVersion'])!.dirty || editForm.get(['scheduleVersion'])!.touched)
+          "
+        >
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['scheduleVersion'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.modality" for="field_modality">Modality</label>
+          <select class="form-control" id="field_modality" data-cy="modality" name="modality" formControlName="modality">
+            <option *ngIf="!editForm.get('modality')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="modalityOption.id === editForm.get('modality')!.value?.id ? editForm.get('modality')!.value : modalityOption"
+              *ngFor="let modalityOption of modalitiesSharedCollection; trackBy: trackModalityById"
+            >
+              {{ modalityOption.modalityName }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['modality'])!.invalid && (editForm.get(['modality'])!.dirty || editForm.get(['modality'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['modality'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.day" for="field_day">Day</label>
+          <select class="form-control" id="field_day" data-cy="day" name="day" formControlName="day">
+            <option *ngIf="!editForm.get('day')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="dayOption.id === editForm.get('day')!.value?.id ? editForm.get('day')!.value : dayOption"
+              *ngFor="let dayOption of daysSharedCollection; trackBy: trackDayById"
+            >
+              {{ dayOption.dayName }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['day'])!.invalid && (editForm.get(['day'])!.dirty || editForm.get(['day'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['day'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.courseModule" for="field_courseModule"
+            >Course Module</label
+          >
+          <select class="form-control" id="field_courseModule" data-cy="courseModule" name="courseModule" formControlName="courseModule">
+            <option *ngIf="!editForm.get('courseModule')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="
+                courseModuleOption.id === editForm.get('courseModule')!.value?.id ? editForm.get('courseModule')!.value : courseModuleOption
+              "
+              *ngFor="let courseModuleOption of courseModulesSharedCollection; trackBy: trackCourseModuleById"
+            >
+              {{ courseModuleOption.id }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            editForm.get(['courseModule'])!.invalid && (editForm.get(['courseModule'])!.dirty || editForm.get(['courseModule'])!.touched)
+          "
+        >
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['courseModule'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.classroom" for="field_classroom">Classroom</label>
+          <select class="form-control" id="field_classroom" data-cy="classroom" name="classroom" formControlName="classroom">
+            <option *ngIf="!editForm.get('classroom')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="classroomOption.id === editForm.get('classroom')!.value?.id ? editForm.get('classroom')!.value : classroomOption"
+              *ngFor="let classroomOption of classroomsSharedCollection; trackBy: trackClassroomById"
+            >
+              {{ classroomOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['classroom'])!.invalid && (editForm.get(['classroom'])!.dirty || editForm.get(['classroom'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['classroom'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.schedule.trainer" for="field_trainer">Trainer</label>
+          <select class="form-control" id="field_trainer" data-cy="trainer" name="trainer" formControlName="trainer">
+            <option *ngIf="!editForm.get('trainer')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="trainerOption.id === editForm.get('trainer')!.value?.id ? editForm.get('trainer')!.value : trainerOption"
+              *ngFor="let trainerOption of trainersSharedCollection; trackBy: trackTrainerById"
+            >
+              {{ trainerOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['trainer'])!.invalid && (editForm.get(['trainer'])!.dirty || editForm.get(['trainer'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['trainer'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

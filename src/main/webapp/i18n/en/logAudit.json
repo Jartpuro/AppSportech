@@ -1,0 +1,28 @@
+{
+  "sportechappApp": {
+    "logAudit": {
+      "home": {
+        "title": "Log Audits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Log Audit",
+        "createOrEditLabel": "Create or edit a Log Audit",
+        "notFound": "No Log Audits found"
+      },
+      "created": "A new Log Audit is created with identifier {{ param }}",
+      "updated": "A Log Audit is updated with identifier {{ param }}",
+      "deleted": "A Log Audit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Log Audit {{ id }}?"
+      },
+      "detail": {
+        "title": "Log Audit"
+      },
+      "id": "ID",
+      "levelAudit": "Level Audit",
+      "logName": "Log Name",
+      "messageAudit": "Message Audit",
+      "dateAudit": "Date Audit",
+      "customer": "Customer"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "sportechappApp": {
+    "logAudit": {
+      "home": {
+        "title": "Log Audits",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Log Audit",
+        "createOrEditLabel": "Crear o editar Log Audit",
+        "notFound": "Ningún Log Audits encontrado"
+      },
+      "created": "Un nuevo Log Audit ha sido creado con el identificador {{ param }}",
+      "updated": "Un Log Audit ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Log Audit ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Log Audit {{ id }}?"
+      },
+      "detail": {
+        "title": "Log Audit"
+      },
+      "id": "ID",
+      "levelAudit": "Level Audit",
+      "logName": "Log Name",
+      "messageAudit": "Message Audit",
+      "dateAudit": "Date Audit",
+      "customer": "Customer"
+    }
+  }
+}

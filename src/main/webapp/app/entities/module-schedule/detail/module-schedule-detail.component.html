@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="moduleSchedule">
+      <h2 data-cy="moduleScheduleDetailsHeading">
+        <span sportechappTranslate="sportechappApp.moduleSchedule.detail.title">Module Schedule</span>
+      </h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ moduleSchedule.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.moduleSchedule.module">Module</span></dt>
+        <dd>
+          <div *ngIf="moduleSchedule.module">
+            <a [routerLink]="['/module', moduleSchedule.module?.id, 'view']">{{ moduleSchedule.module?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/module-schedule', moduleSchedule.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

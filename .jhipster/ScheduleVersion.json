@@ -1,0 +1,35 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604044250",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "schedule_version",
+  "fields": [
+    {
+      "fieldName": "versionNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "versionState",
+      "fieldType": "State",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE (Activo),INACTIVE (Inactivo)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ScheduleVersion",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "scheduleVersion",
+      "relationshipName": "schedule",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

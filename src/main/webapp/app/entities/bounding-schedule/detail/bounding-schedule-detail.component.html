@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="boundingSchedule">
+      <h2 data-cy="boundingScheduleDetailsHeading">
+        <span sportechappTranslate="sportechappApp.boundingSchedule.detail.title">Bounding Schedule</span>
+      </h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ boundingSchedule.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.boundingSchedule.bondingTrainer">Bonding Trainer</span></dt>
+        <dd>
+          <div *ngIf="boundingSchedule.bondingTrainer">
+            <a [routerLink]="['/bonding-trainer', boundingSchedule.bondingTrainer?.id, 'view']">{{
+              boundingSchedule.bondingTrainer?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bounding-schedule', boundingSchedule.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

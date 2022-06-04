@@ -1,0 +1,116 @@
+<div>
+  <h2 id="page-heading" data-cy="CourseHeading">
+    <span sportechappTranslate="sportechappApp.course.home.title">Courses</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span sportechappTranslate="sportechappApp.course.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-course"
+        [routerLink]="['/course/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span sportechappTranslate="sportechappApp.course.home.createLabel"> Create a new Course </span>
+      </button>
+    </div>
+  </h2>
+
+  <sportechapp-alert-error></sportechapp-alert-error>
+
+  <sportechapp-alert></sportechapp-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="courses?.length === 0">
+    <span sportechappTranslate="sportechappApp.course.home.notFound">No courses found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="courses && courses.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr sportechappSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" sportechappSortBy="id"><span sportechappTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" sportechappSortBy="courseNumber">
+            <span sportechappTranslate="sportechappApp.course.courseNumber">Course Number</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="startDate">
+            <span sportechappTranslate="sportechappApp.course.startDate">Start Date</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="endDate">
+            <span sportechappTranslate="sportechappApp.course.endDate">End Date</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="route">
+            <span sportechappTranslate="sportechappApp.course.route">Route</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="courseStatus.nameCourseStatus">
+            <span sportechappTranslate="sportechappApp.course.courseStatus">Course Status</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="trainingProgram.id">
+            <span sportechappTranslate="sportechappApp.course.trainingProgram">Training Program</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/course', course.id, 'view']">{{ course.id }}</a>
+          </td>
+          <td>{{ course.courseNumber }}</td>
+          <td>{{ course.startDate | formatMediumDate }}</td>
+          <td>{{ course.endDate | formatMediumDate }}</td>
+          <td>{{ course.route }}</td>
+          <td>
+            <div *ngIf="course.courseStatus">
+              <a [routerLink]="['/course-status', course.courseStatus?.id, 'view']">{{ course.courseStatus?.nameCourseStatus }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="course.trainingProgram">
+              <a [routerLink]="['/training-program', course.trainingProgram?.id, 'view']">{{ course.trainingProgram?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/course', course.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/course', course.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(course)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="courses && courses.length > 0">
+    <div class="d-flex justify-content-center">
+      <sportechapp-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></sportechapp-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

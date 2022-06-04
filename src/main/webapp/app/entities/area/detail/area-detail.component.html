@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="area">
+      <h2 data-cy="areaDetailsHeading"><span sportechappTranslate="sportechappApp.area.detail.title">Area</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ area.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.area.areaName">Area Name</span></dt>
+        <dd>
+          <span>{{ area.areaName }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.area.urlLogo">Url Logo</span></dt>
+        <dd>
+          <span>{{ area.urlLogo }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.area.areaState">Area State</span></dt>
+        <dd>
+          <span sportechappTranslate="{{ 'sportechappApp.State.' + area.areaState }}">{{ area.areaState }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/area', area.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

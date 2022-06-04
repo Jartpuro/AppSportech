@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="schedule">
+      <h2 data-cy="scheduleDetailsHeading"><span sportechappTranslate="sportechappApp.schedule.detail.title">Schedule</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ schedule.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.startTime">Start Time</span></dt>
+        <dd>
+          <span>{{ schedule.startTime | duration }} ({{ schedule.startTime }})</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.endTime">End Time</span></dt>
+        <dd>
+          <span>{{ schedule.endTime | duration }} ({{ schedule.endTime }})</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.scheduleVersion">Schedule Version</span></dt>
+        <dd>
+          <div *ngIf="schedule.scheduleVersion">
+            <a [routerLink]="['/schedule-version', schedule.scheduleVersion?.id, 'view']">{{ schedule.scheduleVersion?.id }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.modality">Modality</span></dt>
+        <dd>
+          <div *ngIf="schedule.modality">
+            <a [routerLink]="['/modality', schedule.modality?.id, 'view']">{{ schedule.modality?.modalityName }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.day">Day</span></dt>
+        <dd>
+          <div *ngIf="schedule.day">
+            <a [routerLink]="['/day', schedule.day?.id, 'view']">{{ schedule.day?.dayName }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.courseModule">Course Module</span></dt>
+        <dd>
+          <div *ngIf="schedule.courseModule">
+            <a [routerLink]="['/course-module', schedule.courseModule?.id, 'view']">{{ schedule.courseModule?.id }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.classroom">Classroom</span></dt>
+        <dd>
+          <div *ngIf="schedule.classroom">
+            <a [routerLink]="['/classroom', schedule.classroom?.id, 'view']">{{ schedule.classroom?.id }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.schedule.trainer">Trainer</span></dt>
+        <dd>
+          <div *ngIf="schedule.trainer">
+            <a [routerLink]="['/trainer', schedule.trainer?.id, 'view']">{{ schedule.trainer?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/schedule', schedule.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

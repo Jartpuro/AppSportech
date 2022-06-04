@@ -1,0 +1,115 @@
+<div>
+  <h2 id="page-heading" data-cy="AreaTrainerHeading">
+    <span sportechappTranslate="sportechappApp.areaTrainer.home.title">Area Trainers</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span sportechappTranslate="sportechappApp.areaTrainer.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-area-trainer"
+        [routerLink]="['/area-trainer/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span sportechappTranslate="sportechappApp.areaTrainer.home.createLabel"> Create a new Area Trainer </span>
+      </button>
+    </div>
+  </h2>
+
+  <sportechapp-alert-error></sportechapp-alert-error>
+
+  <sportechapp-alert></sportechapp-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="areaTrainers?.length === 0">
+    <span sportechappTranslate="sportechappApp.areaTrainer.home.notFound">No areaTrainers found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="areaTrainers && areaTrainers.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr sportechappSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" sportechappSortBy="id"><span sportechappTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" sportechappSortBy="areaTrainerState">
+            <span sportechappTranslate="sportechappApp.areaTrainer.areaTrainerState">Area Trainer State</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="area.areaName">
+            <span sportechappTranslate="sportechappApp.areaTrainer.area">Area</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="trainer.id">
+            <span sportechappTranslate="sportechappApp.areaTrainer.trainer">Trainer</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let areaTrainer of areaTrainers; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/area-trainer', areaTrainer.id, 'view']">{{ areaTrainer.id }}</a>
+          </td>
+          <td sportechappTranslate="{{ 'sportechappApp.State.' + areaTrainer.areaTrainerState }}">{{ areaTrainer.areaTrainerState }}</td>
+          <td>
+            <div *ngIf="areaTrainer.area">
+              <a [routerLink]="['/area', areaTrainer.area?.id, 'view']">{{ areaTrainer.area?.areaName }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="areaTrainer.trainer">
+              <a [routerLink]="['/trainer', areaTrainer.trainer?.id, 'view']">{{ areaTrainer.trainer?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/area-trainer', areaTrainer.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/area-trainer', areaTrainer.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(areaTrainer)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="areaTrainers && areaTrainers.length > 0">
+    <div class="d-flex justify-content-center">
+      <sportechapp-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></sportechapp-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "sportechappApp": {
+    "campus": {
+      "home": {
+        "title": "Campuses",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Campus",
+        "createOrEditLabel": "Crear o editar Campus",
+        "notFound": "Ningún Campuses encontrado"
+      },
+      "created": "Un nuevo Campus ha sido creado con el identificador {{ param }}",
+      "updated": "Un Campus ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Campus ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Campus {{ id }}?"
+      },
+      "detail": {
+        "title": "Campus"
+      },
+      "id": "ID",
+      "campusName": "Campus Name",
+      "campusAddress": "Campus Address",
+      "campusState": "Campus State",
+      "classroom": "Classroom"
+    }
+  }
+}

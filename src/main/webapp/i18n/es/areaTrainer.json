@@ -1,0 +1,26 @@
+{
+  "sportechappApp": {
+    "areaTrainer": {
+      "home": {
+        "title": "Area Trainers",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Area Trainer",
+        "createOrEditLabel": "Crear o editar Area Trainer",
+        "notFound": "Ningún Area Trainers encontrado"
+      },
+      "created": "Un nuevo Area Trainer ha sido creado con el identificador {{ param }}",
+      "updated": "Un Area Trainer ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Area Trainer ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Area Trainer {{ id }}?"
+      },
+      "detail": {
+        "title": "Area Trainer"
+      },
+      "id": "ID",
+      "areaTrainerState": "Area Trainer State",
+      "area": "Area",
+      "trainer": "Trainer"
+    }
+  }
+}

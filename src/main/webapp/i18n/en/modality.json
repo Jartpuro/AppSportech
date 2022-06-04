@@ -1,0 +1,27 @@
+{
+  "sportechappApp": {
+    "modality": {
+      "home": {
+        "title": "Modalities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Modality",
+        "createOrEditLabel": "Create or edit a Modality",
+        "notFound": "No Modalities found"
+      },
+      "created": "A new Modality is created with identifier {{ param }}",
+      "updated": "A Modality is updated with identifier {{ param }}",
+      "deleted": "A Modality is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Modality {{ id }}?"
+      },
+      "detail": {
+        "title": "Modality"
+      },
+      "id": "ID",
+      "modalityName": "Modality Name",
+      "modalityColor": "Modality Color",
+      "modalityState": "Modality State",
+      "schedule": "Schedule"
+    }
+  }
+}

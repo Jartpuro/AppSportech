@@ -1,0 +1,9 @@
+{
+  "sportechappApp": {
+    "State": {
+      "null": "",
+      "ACTIVE": "Activo",
+      "INACTIVE": "Inactivo"
+    }
+  }
+}

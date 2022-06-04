@@ -1,0 +1,35 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604042850",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "course_status",
+  "fields": [
+    {
+      "fieldName": "nameCourseStatus",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "stateCourse",
+      "fieldType": "State",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE (Activo),INACTIVE (Inactivo)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CourseStatus",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "courseStatus",
+      "relationshipName": "course",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

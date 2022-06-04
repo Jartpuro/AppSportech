@@ -1,0 +1,26 @@
+{
+  "sportechappApp": {
+    "trainingStatus": {
+      "home": {
+        "title": "Training Statuses",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Training Status",
+        "createOrEditLabel": "Crear o editar Training Status",
+        "notFound": "Ningún Training Statuses encontrado"
+      },
+      "created": "Un nuevo Training Status ha sido creado con el identificador {{ param }}",
+      "updated": "Un Training Status ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Training Status ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Training Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Training Status"
+      },
+      "id": "ID",
+      "statusName": "Status Name",
+      "stateTraining": "State Training",
+      "trainee": "Trainee"
+    }
+  }
+}

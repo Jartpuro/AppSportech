@@ -1,0 +1,29 @@
+{
+  "sportechappApp": {
+    "classroom": {
+      "home": {
+        "title": "Classrooms",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Classroom",
+        "createOrEditLabel": "Crear o editar Classroom",
+        "notFound": "Ningún Classrooms encontrado"
+      },
+      "created": "Un nuevo Classroom ha sido creado con el identificador {{ param }}",
+      "updated": "Un Classroom ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Classroom ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Classroom {{ id }}?"
+      },
+      "detail": {
+        "title": "Classroom"
+      },
+      "id": "ID",
+      "classroomNumber": "Classroom Number",
+      "classroomDescription": "Classroom Description",
+      "classroomState": "Classroom State",
+      "schedule": "Schedule",
+      "classroomType": "Classroom Type",
+      "campus": "Campus"
+    }
+  }
+}

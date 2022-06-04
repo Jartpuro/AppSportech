@@ -1,0 +1,66 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604042950",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "course",
+  "fields": [
+    {
+      "fieldName": "courseNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "route",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Course",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "trainee",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "trainee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "courseModule",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "courseModule",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "nameCourseStatus",
+      "otherEntityName": "courseStatus",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "courseStatus",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "trainingProgram",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "trainingProgram",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

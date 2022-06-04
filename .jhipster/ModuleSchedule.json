@@ -1,0 +1,23 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604043350",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "module_schedule",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ModuleSchedule",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "module",
+      "otherEntityRelationshipName": "moduleSchedule",
+      "relationshipName": "module",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

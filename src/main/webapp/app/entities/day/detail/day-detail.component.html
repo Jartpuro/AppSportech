@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="day">
+      <h2 data-cy="dayDetailsHeading"><span sportechappTranslate="sportechappApp.day.detail.title">Day</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ day.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.day.dayName">Day Name</span></dt>
+        <dd>
+          <span>{{ day.dayName }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.day.dayState">Day State</span></dt>
+        <dd>
+          <span sportechappTranslate="{{ 'sportechappApp.State.' + day.dayState }}">{{ day.dayState }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/day', day.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

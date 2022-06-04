@@ -1,0 +1,26 @@
+{
+  "sportechappApp": {
+    "trainee": {
+      "home": {
+        "title": "Trainees",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Trainee",
+        "createOrEditLabel": "Create or edit a Trainee",
+        "notFound": "No Trainees found"
+      },
+      "created": "A new Trainee is created with identifier {{ param }}",
+      "updated": "A Trainee is updated with identifier {{ param }}",
+      "deleted": "A Trainee is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Trainee {{ id }}?"
+      },
+      "detail": {
+        "title": "Trainee"
+      },
+      "id": "ID",
+      "customer": "Customer",
+      "trainingStatus": "Training Status",
+      "course": "Course"
+    }
+  }
+}

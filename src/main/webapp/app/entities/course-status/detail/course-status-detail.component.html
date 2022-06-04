@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="courseStatus">
+      <h2 data-cy="courseStatusDetailsHeading">
+        <span sportechappTranslate="sportechappApp.courseStatus.detail.title">Course Status</span>
+      </h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ courseStatus.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.courseStatus.nameCourseStatus">Name Course Status</span></dt>
+        <dd>
+          <span>{{ courseStatus.nameCourseStatus }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.courseStatus.stateCourse">State Course</span></dt>
+        <dd>
+          <span sportechappTranslate="{{ 'sportechappApp.State.' + courseStatus.stateCourse }}">{{ courseStatus.stateCourse }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/course-status', courseStatus.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

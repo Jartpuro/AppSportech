@@ -1,0 +1,276 @@
+
+application {
+    config {
+        baseName sportechapp
+        applicationType monolith
+        packageName co.edu.sena
+        authenticationType jwt
+        devDatabaseType mysql
+        prodDatabaseType mysql
+        cacheProvider no
+        buildTool maven
+        clientFramework angularX
+        enableTranslation true
+        nativeLanguage es
+        languages [en, es]
+        websocket false
+        //testFrameworks [cucumber]
+        //entitySuffix false
+        jhiPrefix sportechapp
+        reactive false
+        serverPort 8080
+        searchEngine false
+        clientTheme superhero
+        clientThemeVariant dark
+    }
+    entities *
+}
+
+enum State{
+	ACTIVE(Activo),
+    INACTIVE(Inactivo)
+}
+
+//tipo de documento
+entity DocumentType {
+	initials String required maxlength(10) unique,
+    documentName String required maxlength(100) unique,
+    stateDocumentType State required
+}
+
+//cliente datos
+entity Customer{
+	documentNumber String required maxlength(50),
+    firstName String required maxlength(50),
+    secondName String maxlength(50),
+    fisrtLastName String required maxlength(50),
+    secondLastName String maxlength(50)
+}
+
+//Estado de entrenamiento
+entity TrainingStatus {
+	statusName String required maxlength(40) unique,
+    stateTraining State required
+}
+
+//Estado de curso
+entity CourseStatus {
+	nameCourseStatus String required maxlength(20) unique,
+    stateCourse State required
+}
+
+//Curso
+entity Course {
+	courseNumber String required maxlength(100) unique,
+    startDate LocalDate required,
+    endDate LocalDate required,
+    route String required maxlength(40)
+}
+
+//Estudiante
+entity Trainee {
+}
+
+entity LogError {
+    levelError String required maxlength(400),
+    logName String required maxlength(400),
+    messageError String required maxlength(400),
+    dateError ZonedDateTime required
+}
+
+entity LogAudit {
+    levelAudit String required maxlength(400),
+    logName String required maxlength(400),
+    messageAudit String required maxlength(400),
+    dateAudit ZonedDateTime required
+}
+
+//Horario del modulo
+entity ModuleSchedule {
+}
+
+enum StateProgram {
+	EXECUTION ("Ejecución"),
+    DISCONTINUED ("Suspendido")
+}
+
+enum Offer {
+	ATHLETICS ("Atletismo"),
+	BADMINTON ("Badminton"),
+	BASKETBALL ("Banloncesto"),
+	HANDBALL ("Balonmano"),
+	BASEBALL ("Beisbol"),
+	BIATHLON ("Biatlon"),
+	BOXING ("Boxeo"),
+	BREAKING ("Breaking"),
+	CYCLING ("Cliclismo"),
+	BMX ("Bmx"),
+	EQUESTRIAN ("Ecuestre"),
+	CLIMBING ("Escalada"),
+	FENCING ("Esgrima"),
+	SKI ("Esqui"),
+	SOCCER ("Futbol"),
+	GYM ("Gimnasia"),
+	GOLF ("Golf"),
+	WEIGHTLIFTING ("Halterofilia"),
+	HOCKEY ("Hockey"),
+	JUDO ("Judo"),
+	KARATE ("Karate"),
+	STRUGGLE ("Lucha"),
+	SWIM ("Natacion"),
+	SKATING ("Patinaje"),
+	PENTATHLON ("Pentatlon"),
+	ROWING ("Remo"),
+	RUGBY ("Rugby"),
+	SURF ("Surf"),
+	TAEKWONDO ("Taekwondo"),
+	TENNIS ("Tenis"),
+	THREW ("Tiro"),
+	TRIATHLON ("Triatlon"),
+	CANDLE ("Vela"),
+	VOLLEYBALL ("Voleibol"),
+	WATERPOLO ("Waterpolo")
+}
+
+//Programa de entrenamiento
+entity TrainingProgram {
+    programCode String required maxlength(50),
+    programVersion String required maxlength(40),
+    programName Offer required,
+    programInitials String required maxlength(40),
+    programState StateProgram required
+}
+
+//Modulo de entrenamiento
+entity Module {
+    moduleName Integer required,
+    moduleState String
+}
+
+//Curso del modulo
+entity CourseModule {
+}
+
+//Tipo de aula de clase
+entity ClassroomType {
+    typeClassroom String required maxlength(50) unique,
+    classroomDescription String required maxlength(100),
+    classroomState State required
+}
+
+//Sede
+entity Campus {
+    campusName String required maxlength(50) unique,
+    campusAddress String required maxlength(400),
+    campusState State required
+}
+
+//Aula de clase
+entity Classroom{
+    classroomNumber String required maxlength(50),
+    classroomDescription String required maxlength(1000),
+    classroomState String required maxlength(40),
+
+}
+
+entity Day {
+    dayName String required maxlength(40) unique,
+    dayState State required
+}
+
+//Modalidad de entrenamiento
+entity Modality {
+    modalityName String required maxlength(40) unique,
+    modalityColor String required maxlength(50),
+    modalityState State required
+}
+
+//Version de horario
+entity ScheduleVersion {
+    versionNumber String required maxlength(40),
+    versionState State required
+}
+
+//Horario
+entity Schedule {
+    startTime Duration required,
+    endTime Duration required
+}
+
+entity Year {
+    yearNumber Integer required unique,
+    yearState State required
+}
+
+//Area de entrenamiento
+entity Area {
+    areaName String required maxlength(200) unique,
+    urlLogo String maxlength(1000),
+    areaState State required
+}
+
+//Vinculacion
+entity Bonding {
+    bondingType String required maxlength(40) unique,
+    workingHours Integer required,
+    bondingState State required
+}
+
+//Entrenador
+entity Trainer {
+     trainerState State required
+}
+
+//Area del entrenador
+entity AreaTrainer {
+    areaTrainerState State required
+}
+
+entity BondingTrainer{
+    startTime LocalDate required,
+    endTime LocalDate required
+}
+
+//Tiempo limite de horario
+entity BoundingSchedule {
+}
+
+relationship OneToMany {
+	DocumentType to Customer{documentType(documentName) required}
+    CourseStatus to Course{courseStatus(nameCourseStatus) required}
+    Customer to Trainee{customer required}
+    TrainingStatus to Trainee{trainingStatus(statusName) required}
+    Course to Trainee{course required}
+    Customer to LogError{customer required}
+    Customer to LogAudit{customer required}
+    TrainingProgram to Course{trainingProgram required}
+    Course to CourseModule{course(courseNumber) required}
+    Module to CourseModule{module required}
+    Module to ModuleSchedule{module required}
+    ClassroomType to Classroom{classroomType(typeClassroom) required}
+    Campus to Classroom{campus(campusName) required}
+    ScheduleVersion to Schedule{scheduleVersion required}
+    Modality to Schedule{modality(modalityName) required}
+    Day to Schedule{day(dayName) required}
+    CourseModule to Schedule{courseModule required}
+    Classroom to Schedule{classroom required}
+    Customer to Trainer{customer required}
+    Area to AreaTrainer{area(areaName) required}
+    Trainer to AreaTrainer{trainer required}
+    Year to BondingTrainer{year(yearNumber) required}
+    Trainer to BondingTrainer{trainer required}
+    Bonding to BondingTrainer{bonding(bondingType) required}
+    BondingTrainer to BoundingSchedule{bondingTrainer required}
+    TrainingProgram to Course{trainingProgram required}
+    Trainer to Schedule{trainer required}
+    
+}
+
+relationship OneToOne {
+	Customer{user(login) required} to User
+}
+
+dto * with mapstruct
+service * with serviceImpl
+paginate * with pagination
+//search * with elasticsearch

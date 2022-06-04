@@ -1,0 +1,24 @@
+{
+  "sportechappApp": {
+    "boundingSchedule": {
+      "home": {
+        "title": "Bounding Schedules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bounding Schedule",
+        "createOrEditLabel": "Create or edit a Bounding Schedule",
+        "notFound": "No Bounding Schedules found"
+      },
+      "created": "A new Bounding Schedule is created with identifier {{ param }}",
+      "updated": "A Bounding Schedule is updated with identifier {{ param }}",
+      "deleted": "A Bounding Schedule is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bounding Schedule {{ id }}?"
+      },
+      "detail": {
+        "title": "Bounding Schedule"
+      },
+      "id": "ID",
+      "bondingTrainer": "Bonding Trainer"
+    }
+  }
+}

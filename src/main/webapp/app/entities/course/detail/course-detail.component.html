@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="course">
+      <h2 data-cy="courseDetailsHeading"><span sportechappTranslate="sportechappApp.course.detail.title">Course</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ course.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.course.courseNumber">Course Number</span></dt>
+        <dd>
+          <span>{{ course.courseNumber }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.course.startDate">Start Date</span></dt>
+        <dd>
+          <span>{{ course.startDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.course.endDate">End Date</span></dt>
+        <dd>
+          <span>{{ course.endDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.course.route">Route</span></dt>
+        <dd>
+          <span>{{ course.route }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.course.courseStatus">Course Status</span></dt>
+        <dd>
+          <div *ngIf="course.courseStatus">
+            <a [routerLink]="['/course-status', course.courseStatus?.id, 'view']">{{ course.courseStatus?.nameCourseStatus }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.course.trainingProgram">Training Program</span></dt>
+        <dd>
+          <div *ngIf="course.trainingProgram">
+            <a [routerLink]="['/training-program', course.trainingProgram?.id, 'view']">{{ course.trainingProgram?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/course', course.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "sportechappApp": {
+    "courseModule": {
+      "home": {
+        "title": "Course Modules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Course Module",
+        "createOrEditLabel": "Create or edit a Course Module",
+        "notFound": "No Course Modules found"
+      },
+      "created": "A new Course Module is created with identifier {{ param }}",
+      "updated": "A Course Module is updated with identifier {{ param }}",
+      "deleted": "A Course Module is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Course Module {{ id }}?"
+      },
+      "detail": {
+        "title": "Course Module"
+      },
+      "id": "ID",
+      "schedule": "Schedule",
+      "course": "Course",
+      "module": "Module"
+    }
+  }
+}

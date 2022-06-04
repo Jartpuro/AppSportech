@@ -1,0 +1,31 @@
+{
+  "sportechappApp": {
+    "schedule": {
+      "home": {
+        "title": "Schedules",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Schedule",
+        "createOrEditLabel": "Crear o editar Schedule",
+        "notFound": "Ningún Schedules encontrado"
+      },
+      "created": "Un nuevo Schedule ha sido creado con el identificador {{ param }}",
+      "updated": "Un Schedule ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Schedule ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Schedule {{ id }}?"
+      },
+      "detail": {
+        "title": "Schedule"
+      },
+      "id": "ID",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "scheduleVersion": "Schedule Version",
+      "modality": "Modality",
+      "day": "Day",
+      "courseModule": "Course Module",
+      "classroom": "Classroom",
+      "trainer": "Trainer"
+    }
+  }
+}

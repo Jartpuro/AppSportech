@@ -1,0 +1,26 @@
+{
+  "sportechappApp": {
+    "courseStatus": {
+      "home": {
+        "title": "Course Statuses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Course Status",
+        "createOrEditLabel": "Create or edit a Course Status",
+        "notFound": "No Course Statuses found"
+      },
+      "created": "A new Course Status is created with identifier {{ param }}",
+      "updated": "A Course Status is updated with identifier {{ param }}",
+      "deleted": "A Course Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Course Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Course Status"
+      },
+      "id": "ID",
+      "nameCourseStatus": "Name Course Status",
+      "stateCourse": "State Course",
+      "course": "Course"
+    }
+  }
+}

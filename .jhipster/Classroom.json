@@ -1,0 +1,57 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604043950",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "classroom",
+  "fields": [
+    {
+      "fieldName": "classroomNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "classroomDescription",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "classroomState",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Classroom",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "classroom",
+      "relationshipName": "schedule",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "typeClassroom",
+      "otherEntityName": "classroomType",
+      "otherEntityRelationshipName": "classroom",
+      "relationshipName": "classroomType",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "campusName",
+      "otherEntityName": "campus",
+      "otherEntityRelationshipName": "classroom",
+      "relationshipName": "campus",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="campus">
+      <h2 data-cy="campusDetailsHeading"><span sportechappTranslate="sportechappApp.campus.detail.title">Campus</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ campus.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.campus.campusName">Campus Name</span></dt>
+        <dd>
+          <span>{{ campus.campusName }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.campus.campusAddress">Campus Address</span></dt>
+        <dd>
+          <span>{{ campus.campusAddress }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.campus.campusState">Campus State</span></dt>
+        <dd>
+          <span sportechappTranslate="{{ 'sportechappApp.State.' + campus.campusState }}">{{ campus.campusState }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/campus', campus.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

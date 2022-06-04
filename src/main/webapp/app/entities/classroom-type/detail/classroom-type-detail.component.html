@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="classroomType">
+      <h2 data-cy="classroomTypeDetailsHeading">
+        <span sportechappTranslate="sportechappApp.classroomType.detail.title">Classroom Type</span>
+      </h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ classroomType.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.classroomType.typeClassroom">Type Classroom</span></dt>
+        <dd>
+          <span>{{ classroomType.typeClassroom }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.classroomType.classroomDescription">Classroom Description</span></dt>
+        <dd>
+          <span>{{ classroomType.classroomDescription }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.classroomType.classroomState">Classroom State</span></dt>
+        <dd>
+          <span sportechappTranslate="{{ 'sportechappApp.State.' + classroomType.classroomState }}">{{
+            classroomType.classroomState
+          }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/classroom-type', classroomType.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

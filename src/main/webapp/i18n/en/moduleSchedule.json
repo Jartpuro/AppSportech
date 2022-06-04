@@ -1,0 +1,24 @@
+{
+  "sportechappApp": {
+    "moduleSchedule": {
+      "home": {
+        "title": "Module Schedules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Module Schedule",
+        "createOrEditLabel": "Create or edit a Module Schedule",
+        "notFound": "No Module Schedules found"
+      },
+      "created": "A new Module Schedule is created with identifier {{ param }}",
+      "updated": "A Module Schedule is updated with identifier {{ param }}",
+      "deleted": "A Module Schedule is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Module Schedule {{ id }}?"
+      },
+      "detail": {
+        "title": "Module Schedule"
+      },
+      "id": "ID",
+      "module": "Module"
+    }
+  }
+}

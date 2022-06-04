@@ -1,0 +1,27 @@
+{
+  "sportechappApp": {
+    "classroomType": {
+      "home": {
+        "title": "Classroom Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Classroom Type",
+        "createOrEditLabel": "Create or edit a Classroom Type",
+        "notFound": "No Classroom Types found"
+      },
+      "created": "A new Classroom Type is created with identifier {{ param }}",
+      "updated": "A Classroom Type is updated with identifier {{ param }}",
+      "deleted": "A Classroom Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Classroom Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Classroom Type"
+      },
+      "id": "ID",
+      "typeClassroom": "Type Classroom",
+      "classroomDescription": "Classroom Description",
+      "classroomState": "Classroom State",
+      "classroom": "Classroom"
+    }
+  }
+}

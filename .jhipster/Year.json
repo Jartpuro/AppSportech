@@ -1,0 +1,34 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604044450",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "year",
+  "fields": [
+    {
+      "fieldName": "yearNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "yearState",
+      "fieldType": "State",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE (Activo),INACTIVE (Inactivo)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Year",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "bondingTrainer",
+      "otherEntityRelationshipName": "year",
+      "relationshipName": "bondingTrainer",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

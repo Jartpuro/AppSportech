@@ -1,0 +1,53 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604043450",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "training_program",
+  "fields": [
+    {
+      "fieldName": "programCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "programVersion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "programName",
+      "fieldType": "Offer",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ATHLETICS (Atletismo),BADMINTON (Badminton),BASKETBALL (Banloncesto),HANDBALL (Balonmano),BASEBALL (Beisbol),BIATHLON (Biatlon),BOXING (Boxeo),BREAKING (Breaking),CYCLING (Cliclismo),BMX (Bmx),EQUESTRIAN (Ecuestre),CLIMBING (Escalada),FENCING (Esgrima),SKI (Esqui),SOCCER (Futbol),GYM (Gimnasia),GOLF (Golf),WEIGHTLIFTING (Halterofilia),HOCKEY (Hockey),JUDO (Judo),KARATE (Karate),STRUGGLE (Lucha),SWIM (Natacion),SKATING (Patinaje),PENTATHLON (Pentatlon),ROWING (Remo),RUGBY (Rugby),SURF (Surf),TAEKWONDO (Taekwondo),TENNIS (Tenis),THREW (Tiro),TRIATHLON (Triatlon),CANDLE (Vela),VOLLEYBALL (Voleibol),WATERPOLO (Waterpolo)"
+    },
+    {
+      "fieldName": "programInitials",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "programState",
+      "fieldType": "StateProgram",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EXECUTION (Ejecución),DISCONTINUED (Suspendido)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TrainingProgram",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "trainingProgram",
+      "relationshipName": "course",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

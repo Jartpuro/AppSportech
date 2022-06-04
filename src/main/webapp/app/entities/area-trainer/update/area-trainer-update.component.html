@@ -1,0 +1,112 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-area-trainer-heading"
+        data-cy="AreaTrainerCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.areaTrainer.home.createOrEditLabel"
+      >
+        Create or edit a Area Trainer
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.areaTrainer.areaTrainerState" for="field_areaTrainerState"
+            >Area Trainer State</label
+          >
+          <select
+            class="form-control"
+            name="areaTrainerState"
+            formControlName="areaTrainerState"
+            id="field_areaTrainerState"
+            data-cy="areaTrainerState"
+          >
+            <option [ngValue]="null">{{ 'sportechappApp.State.null' | translate }}</option>
+            <option *ngFor="let state of stateValues" [value]="state">{{ 'sportechappApp.State.' + state | translate }}</option>
+          </select>
+          <div
+            *ngIf="
+              editForm.get('areaTrainerState')!.invalid &&
+              (editForm.get('areaTrainerState')!.dirty || editForm.get('areaTrainerState')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('areaTrainerState')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.areaTrainer.area" for="field_area">Area</label>
+          <select class="form-control" id="field_area" data-cy="area" name="area" formControlName="area">
+            <option *ngIf="!editForm.get('area')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="areaOption.id === editForm.get('area')!.value?.id ? editForm.get('area')!.value : areaOption"
+              *ngFor="let areaOption of areasSharedCollection; trackBy: trackAreaById"
+            >
+              {{ areaOption.areaName }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['area'])!.invalid && (editForm.get(['area'])!.dirty || editForm.get(['area'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['area'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.areaTrainer.trainer" for="field_trainer">Trainer</label>
+          <select class="form-control" id="field_trainer" data-cy="trainer" name="trainer" formControlName="trainer">
+            <option *ngIf="!editForm.get('trainer')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="trainerOption.id === editForm.get('trainer')!.value?.id ? editForm.get('trainer')!.value : trainerOption"
+              *ngFor="let trainerOption of trainersSharedCollection; trackBy: trackTrainerById"
+            >
+              {{ trainerOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['trainer'])!.invalid && (editForm.get(['trainer'])!.dirty || editForm.get(['trainer'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['trainer'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

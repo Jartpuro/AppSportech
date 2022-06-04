@@ -1,0 +1,88 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604042650",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "customer",
+  "fields": [
+    {
+      "fieldName": "documentNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "secondName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "fisrtLastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "secondLastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Customer",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "customer",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "trainee",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "trainee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "logError",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "logError",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "logAudit",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "logAudit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "trainer",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "trainer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "documentName",
+      "otherEntityName": "documentType",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "documentType",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

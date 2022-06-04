@@ -1,0 +1,205 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-classroom-heading"
+        data-cy="ClassroomCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.classroom.home.createOrEditLabel"
+      >
+        Create or edit a Classroom
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.classroom.classroomNumber" for="field_classroomNumber"
+            >Classroom Number</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="classroomNumber"
+            id="field_classroomNumber"
+            data-cy="classroomNumber"
+            formControlName="classroomNumber"
+          />
+          <div
+            *ngIf="
+              editForm.get('classroomNumber')!.invalid &&
+              (editForm.get('classroomNumber')!.dirty || editForm.get('classroomNumber')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classroomNumber')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classroomNumber')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.classroom.classroomDescription" for="field_classroomDescription"
+            >Classroom Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="classroomDescription"
+            id="field_classroomDescription"
+            data-cy="classroomDescription"
+            formControlName="classroomDescription"
+          />
+          <div
+            *ngIf="
+              editForm.get('classroomDescription')!.invalid &&
+              (editForm.get('classroomDescription')!.dirty || editForm.get('classroomDescription')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classroomDescription')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classroomDescription')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 1000 }"
+            >
+              This field cannot be longer than 1000 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.classroom.classroomState" for="field_classroomState"
+            >Classroom State</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="classroomState"
+            id="field_classroomState"
+            data-cy="classroomState"
+            formControlName="classroomState"
+          />
+          <div
+            *ngIf="
+              editForm.get('classroomState')!.invalid && (editForm.get('classroomState')!.dirty || editForm.get('classroomState')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classroomState')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('classroomState')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 40 }"
+            >
+              This field cannot be longer than 40 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.classroom.classroomType" for="field_classroomType"
+            >Classroom Type</label
+          >
+          <select
+            class="form-control"
+            id="field_classroomType"
+            data-cy="classroomType"
+            name="classroomType"
+            formControlName="classroomType"
+          >
+            <option *ngIf="!editForm.get('classroomType')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="
+                classroomTypeOption.id === editForm.get('classroomType')!.value?.id
+                  ? editForm.get('classroomType')!.value
+                  : classroomTypeOption
+              "
+              *ngFor="let classroomTypeOption of classroomTypesSharedCollection; trackBy: trackClassroomTypeById"
+            >
+              {{ classroomTypeOption.typeClassroom }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            editForm.get(['classroomType'])!.invalid && (editForm.get(['classroomType'])!.dirty || editForm.get(['classroomType'])!.touched)
+          "
+        >
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['classroomType'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.classroom.campus" for="field_campus">Campus</label>
+          <select class="form-control" id="field_campus" data-cy="campus" name="campus" formControlName="campus">
+            <option *ngIf="!editForm.get('campus')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="campusOption.id === editForm.get('campus')!.value?.id ? editForm.get('campus')!.value : campusOption"
+              *ngFor="let campusOption of campusesSharedCollection; trackBy: trackCampusById"
+            >
+              {{ campusOption.campusName }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['campus'])!.invalid && (editForm.get(['campus'])!.dirty || editForm.get(['campus'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['campus'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

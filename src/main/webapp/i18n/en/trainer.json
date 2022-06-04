@@ -1,0 +1,28 @@
+{
+  "sportechappApp": {
+    "trainer": {
+      "home": {
+        "title": "Trainers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Trainer",
+        "createOrEditLabel": "Create or edit a Trainer",
+        "notFound": "No Trainers found"
+      },
+      "created": "A new Trainer is created with identifier {{ param }}",
+      "updated": "A Trainer is updated with identifier {{ param }}",
+      "deleted": "A Trainer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Trainer {{ id }}?"
+      },
+      "detail": {
+        "title": "Trainer"
+      },
+      "id": "ID",
+      "trainerState": "Trainer State",
+      "areaTrainer": "Area Trainer",
+      "bondingTrainer": "Bonding Trainer",
+      "schedule": "Schedule",
+      "customer": "Customer"
+    }
+  }
+}

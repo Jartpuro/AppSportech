@@ -1,0 +1,232 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-customer-heading"
+        data-cy="CustomerCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.customer.home.createOrEditLabel"
+      >
+        Create or edit a Customer
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.customer.documentNumber" for="field_documentNumber"
+            >Document Number</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="documentNumber"
+            id="field_documentNumber"
+            data-cy="documentNumber"
+            formControlName="documentNumber"
+          />
+          <div
+            *ngIf="
+              editForm.get('documentNumber')!.invalid && (editForm.get('documentNumber')!.dirty || editForm.get('documentNumber')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('documentNumber')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('documentNumber')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.customer.firstName" for="field_firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+          <div *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('firstName')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('firstName')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.customer.secondName" for="field_secondName">Second Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="secondName"
+            id="field_secondName"
+            data-cy="secondName"
+            formControlName="secondName"
+          />
+          <div *ngIf="editForm.get('secondName')!.invalid && (editForm.get('secondName')!.dirty || editForm.get('secondName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('secondName')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.customer.fisrtLastName" for="field_fisrtLastName"
+            >Fisrt Last Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="fisrtLastName"
+            id="field_fisrtLastName"
+            data-cy="fisrtLastName"
+            formControlName="fisrtLastName"
+          />
+          <div
+            *ngIf="
+              editForm.get('fisrtLastName')!.invalid && (editForm.get('fisrtLastName')!.dirty || editForm.get('fisrtLastName')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('fisrtLastName')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('fisrtLastName')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.customer.secondLastName" for="field_secondLastName"
+            >Second Last Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="secondLastName"
+            id="field_secondLastName"
+            data-cy="secondLastName"
+            formControlName="secondLastName"
+          />
+          <div
+            *ngIf="
+              editForm.get('secondLastName')!.invalid && (editForm.get('secondLastName')!.dirty || editForm.get('secondLastName')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('secondLastName')?.errors?.maxlength"
+              sportechappTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.customer.user" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option *ngIf="!editForm.get('user')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.login }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['user'])!.invalid && (editForm.get(['user'])!.dirty || editForm.get(['user'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['user'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.customer.documentType" for="field_documentType"
+            >Document Type</label
+          >
+          <select class="form-control" id="field_documentType" data-cy="documentType" name="documentType" formControlName="documentType">
+            <option *ngIf="!editForm.get('documentType')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="
+                documentTypeOption.id === editForm.get('documentType')!.value?.id ? editForm.get('documentType')!.value : documentTypeOption
+              "
+              *ngFor="let documentTypeOption of documentTypesSharedCollection; trackBy: trackDocumentTypeById"
+            >
+              {{ documentTypeOption.documentName }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            editForm.get(['documentType'])!.invalid && (editForm.get(['documentType'])!.dirty || editForm.get(['documentType'])!.touched)
+          "
+        >
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['documentType'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

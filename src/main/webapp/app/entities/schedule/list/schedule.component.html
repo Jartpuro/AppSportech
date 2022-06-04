@@ -1,0 +1,150 @@
+<div>
+  <h2 id="page-heading" data-cy="ScheduleHeading">
+    <span sportechappTranslate="sportechappApp.schedule.home.title">Schedules</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span sportechappTranslate="sportechappApp.schedule.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-schedule"
+        [routerLink]="['/schedule/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span sportechappTranslate="sportechappApp.schedule.home.createLabel"> Create a new Schedule </span>
+      </button>
+    </div>
+  </h2>
+
+  <sportechapp-alert-error></sportechapp-alert-error>
+
+  <sportechapp-alert></sportechapp-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="schedules?.length === 0">
+    <span sportechappTranslate="sportechappApp.schedule.home.notFound">No schedules found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="schedules && schedules.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr sportechappSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" sportechappSortBy="id"><span sportechappTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" sportechappSortBy="startTime">
+            <span sportechappTranslate="sportechappApp.schedule.startTime">Start Time</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="endTime">
+            <span sportechappTranslate="sportechappApp.schedule.endTime">End Time</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="scheduleVersion.id">
+            <span sportechappTranslate="sportechappApp.schedule.scheduleVersion">Schedule Version</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="modality.modalityName">
+            <span sportechappTranslate="sportechappApp.schedule.modality">Modality</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="day.dayName">
+            <span sportechappTranslate="sportechappApp.schedule.day">Day</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="courseModule.id">
+            <span sportechappTranslate="sportechappApp.schedule.courseModule">Course Module</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="classroom.id">
+            <span sportechappTranslate="sportechappApp.schedule.classroom">Classroom</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" sportechappSortBy="trainer.id">
+            <span sportechappTranslate="sportechappApp.schedule.trainer">Trainer</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule of schedules; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/schedule', schedule.id, 'view']">{{ schedule.id }}</a>
+          </td>
+          <td title="{{ schedule.startTime }}">{{ schedule.startTime | duration }}</td>
+          <td title="{{ schedule.endTime }}">{{ schedule.endTime | duration }}</td>
+          <td>
+            <div *ngIf="schedule.scheduleVersion">
+              <a [routerLink]="['/schedule-version', schedule.scheduleVersion?.id, 'view']">{{ schedule.scheduleVersion?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="schedule.modality">
+              <a [routerLink]="['/modality', schedule.modality?.id, 'view']">{{ schedule.modality?.modalityName }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="schedule.day">
+              <a [routerLink]="['/day', schedule.day?.id, 'view']">{{ schedule.day?.dayName }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="schedule.courseModule">
+              <a [routerLink]="['/course-module', schedule.courseModule?.id, 'view']">{{ schedule.courseModule?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="schedule.classroom">
+              <a [routerLink]="['/classroom', schedule.classroom?.id, 'view']">{{ schedule.classroom?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="schedule.trainer">
+              <a [routerLink]="['/trainer', schedule.trainer?.id, 'view']">{{ schedule.trainer?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/schedule', schedule.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/schedule', schedule.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(schedule)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" sportechappTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="schedules && schedules.length > 0">
+    <div class="d-flex justify-content-center">
+      <sportechapp-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></sportechapp-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "sportechappApp": {
+    "logError": {
+      "home": {
+        "title": "Log Errors",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Log Error",
+        "createOrEditLabel": "Create or edit a Log Error",
+        "notFound": "No Log Errors found"
+      },
+      "created": "A new Log Error is created with identifier {{ param }}",
+      "updated": "A Log Error is updated with identifier {{ param }}",
+      "deleted": "A Log Error is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Log Error {{ id }}?"
+      },
+      "detail": {
+        "title": "Log Error"
+      },
+      "id": "ID",
+      "levelError": "Level Error",
+      "logName": "Log Name",
+      "messageError": "Message Error",
+      "dateError": "Date Error",
+      "customer": "Customer"
+    }
+  }
+}

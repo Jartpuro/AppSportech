@@ -1,0 +1,23 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604045050",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "bounding_schedule",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BoundingSchedule",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "bondingTrainer",
+      "otherEntityRelationshipName": "boundingSchedule",
+      "relationshipName": "bondingTrainer",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="bonding">
+      <h2 data-cy="bondingDetailsHeading"><span sportechappTranslate="sportechappApp.bonding.detail.title">Bonding</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ bonding.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bonding.bondingType">Bonding Type</span></dt>
+        <dd>
+          <span>{{ bonding.bondingType }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bonding.workingHours">Working Hours</span></dt>
+        <dd>
+          <span>{{ bonding.workingHours }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bonding.bondingState">Bonding State</span></dt>
+        <dd>
+          <span sportechappTranslate="{{ 'sportechappApp.State.' + bonding.bondingState }}">{{ bonding.bondingState }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bonding', bonding.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

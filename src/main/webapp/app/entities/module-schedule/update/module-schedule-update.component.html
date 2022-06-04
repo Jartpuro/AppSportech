@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-module-schedule-heading"
+        data-cy="ModuleScheduleCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.moduleSchedule.home.createOrEditLabel"
+      >
+        Create or edit a Module Schedule
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.moduleSchedule.module" for="field_module">Module</label>
+          <select class="form-control" id="field_module" data-cy="module" name="module" formControlName="module">
+            <option *ngIf="!editForm.get('module')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="moduleOption.id === editForm.get('module')!.value?.id ? editForm.get('module')!.value : moduleOption"
+              *ngFor="let moduleOption of modulesSharedCollection; trackBy: trackModuleById"
+            >
+              {{ moduleOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['module'])!.invalid && (editForm.get(['module'])!.dirty || editForm.get(['module'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['module'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

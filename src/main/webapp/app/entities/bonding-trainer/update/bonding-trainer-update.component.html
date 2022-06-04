@@ -1,0 +1,156 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-bonding-trainer-heading"
+        data-cy="BondingTrainerCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.bondingTrainer.home.createOrEditLabel"
+      >
+        Create or edit a Bonding Trainer
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.bondingTrainer.startTime" for="field_startTime">Start Time</label>
+          <div class="input-group">
+            <input
+              id="field_startTime"
+              data-cy="startTime"
+              type="text"
+              class="form-control"
+              name="startTime"
+              ngbDatepicker
+              #startTimeDp="ngbDatepicker"
+              formControlName="startTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="startTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+          <div *ngIf="editForm.get('startTime')!.invalid && (editForm.get('startTime')!.dirty || editForm.get('startTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('startTime')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.bondingTrainer.endTime" for="field_endTime">End Time</label>
+          <div class="input-group">
+            <input
+              id="field_endTime"
+              data-cy="endTime"
+              type="text"
+              class="form-control"
+              name="endTime"
+              ngbDatepicker
+              #endTimeDp="ngbDatepicker"
+              formControlName="endTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="endTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+          <div *ngIf="editForm.get('endTime')!.invalid && (editForm.get('endTime')!.dirty || editForm.get('endTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('endTime')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.bondingTrainer.year" for="field_year">Year</label>
+          <select class="form-control" id="field_year" data-cy="year" name="year" formControlName="year">
+            <option *ngIf="!editForm.get('year')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="yearOption.id === editForm.get('year')!.value?.id ? editForm.get('year')!.value : yearOption"
+              *ngFor="let yearOption of yearsSharedCollection; trackBy: trackYearById"
+            >
+              {{ yearOption.yearNumber }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['year'])!.invalid && (editForm.get(['year'])!.dirty || editForm.get(['year'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['year'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.bondingTrainer.trainer" for="field_trainer">Trainer</label>
+          <select class="form-control" id="field_trainer" data-cy="trainer" name="trainer" formControlName="trainer">
+            <option *ngIf="!editForm.get('trainer')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="trainerOption.id === editForm.get('trainer')!.value?.id ? editForm.get('trainer')!.value : trainerOption"
+              *ngFor="let trainerOption of trainersSharedCollection; trackBy: trackTrainerById"
+            >
+              {{ trainerOption.id }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['trainer'])!.invalid && (editForm.get(['trainer'])!.dirty || editForm.get(['trainer'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['trainer'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.bondingTrainer.bonding" for="field_bonding">Bonding</label>
+          <select class="form-control" id="field_bonding" data-cy="bonding" name="bonding" formControlName="bonding">
+            <option *ngIf="!editForm.get('bonding')!.value" [ngValue]="null" selected></option>
+            <option
+              [ngValue]="bondingOption.id === editForm.get('bonding')!.value?.id ? editForm.get('bonding')!.value : bondingOption"
+              *ngFor="let bondingOption of bondingsSharedCollection; trackBy: trackBondingById"
+            >
+              {{ bondingOption.bondingType }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="editForm.get(['bonding'])!.invalid && (editForm.get(['bonding'])!.dirty || editForm.get(['bonding'])!.touched)">
+          <small
+            class="form-text text-danger"
+            *ngIf="editForm.get(['bonding'])?.errors?.required"
+            sportechappTranslate="entity.validation.required"
+          >
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604044850",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "area_trainer",
+  "fields": [
+    {
+      "fieldName": "areaTrainerState",
+      "fieldType": "State",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE (Activo),INACTIVE (Inactivo)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AreaTrainer",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "areaName",
+      "otherEntityName": "area",
+      "otherEntityRelationshipName": "areaTrainer",
+      "relationshipName": "area",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "trainer",
+      "otherEntityRelationshipName": "areaTrainer",
+      "relationshipName": "trainer",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

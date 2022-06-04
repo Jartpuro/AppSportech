@@ -1,0 +1,79 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="sportechapp-year-heading" data-cy="YearCreateUpdateHeading" sportechappTranslate="sportechappApp.year.home.createOrEditLabel">
+        Create or edit a Year
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.year.yearNumber" for="field_yearNumber">Year Number</label>
+          <input
+            type="number"
+            class="form-control"
+            name="yearNumber"
+            id="field_yearNumber"
+            data-cy="yearNumber"
+            formControlName="yearNumber"
+          />
+          <div *ngIf="editForm.get('yearNumber')!.invalid && (editForm.get('yearNumber')!.dirty || editForm.get('yearNumber')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('yearNumber')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('yearNumber')?.errors?.number"
+              sportechappTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.year.yearState" for="field_yearState">Year State</label>
+          <select class="form-control" name="yearState" formControlName="yearState" id="field_yearState" data-cy="yearState">
+            <option [ngValue]="null">{{ 'sportechappApp.State.null' | translate }}</option>
+            <option *ngFor="let state of stateValues" [value]="state">{{ 'sportechappApp.State.' + state | translate }}</option>
+          </select>
+          <div *ngIf="editForm.get('yearState')!.invalid && (editForm.get('yearState')!.dirty || editForm.get('yearState')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('yearState')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

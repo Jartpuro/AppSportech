@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity BondingTrainer.
+    -->
+    <changeSet id="20220604044950-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="year_id"
+                                 baseTableName="bonding_trainer"
+                                 constraintName="fk_bonding_trainer__year_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="year"/>
+
+        <addForeignKeyConstraint baseColumnNames="trainer_id"
+                                 baseTableName="bonding_trainer"
+                                 constraintName="fk_bonding_trainer__trainer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trainer"/>
+
+        <addForeignKeyConstraint baseColumnNames="bonding_id"
+                                 baseTableName="bonding_trainer"
+                                 constraintName="fk_bonding_trainer__bonding_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bonding"/>
+    </changeSet>
+</databaseChangeLog>

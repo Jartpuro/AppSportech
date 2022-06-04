@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="logAudit">
+      <h2 data-cy="logAuditDetailsHeading"><span sportechappTranslate="sportechappApp.logAudit.detail.title">Log Audit</span></h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ logAudit.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.logAudit.levelAudit">Level Audit</span></dt>
+        <dd>
+          <span>{{ logAudit.levelAudit }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.logAudit.logName">Log Name</span></dt>
+        <dd>
+          <span>{{ logAudit.logName }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.logAudit.messageAudit">Message Audit</span></dt>
+        <dd>
+          <span>{{ logAudit.messageAudit }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.logAudit.dateAudit">Date Audit</span></dt>
+        <dd>
+          <span>{{ logAudit.dateAudit | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.logAudit.customer">Customer</span></dt>
+        <dd>
+          <div *ngIf="logAudit.customer">
+            <a [routerLink]="['/customer', logAudit.customer?.id, 'view']">{{ logAudit.customer?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/log-audit', logAudit.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

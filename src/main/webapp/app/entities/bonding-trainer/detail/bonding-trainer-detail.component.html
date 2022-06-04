@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="bondingTrainer">
+      <h2 data-cy="bondingTrainerDetailsHeading">
+        <span sportechappTranslate="sportechappApp.bondingTrainer.detail.title">Bonding Trainer</span>
+      </h2>
+
+      <hr />
+
+      <sportechapp-alert-error></sportechapp-alert-error>
+
+      <sportechapp-alert></sportechapp-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span sportechappTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ bondingTrainer.id }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bondingTrainer.startTime">Start Time</span></dt>
+        <dd>
+          <span>{{ bondingTrainer.startTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bondingTrainer.endTime">End Time</span></dt>
+        <dd>
+          <span>{{ bondingTrainer.endTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bondingTrainer.year">Year</span></dt>
+        <dd>
+          <div *ngIf="bondingTrainer.year">
+            <a [routerLink]="['/year', bondingTrainer.year?.id, 'view']">{{ bondingTrainer.year?.yearNumber }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bondingTrainer.trainer">Trainer</span></dt>
+        <dd>
+          <div *ngIf="bondingTrainer.trainer">
+            <a [routerLink]="['/trainer', bondingTrainer.trainer?.id, 'view']">{{ bondingTrainer.trainer?.id }}</a>
+          </div>
+        </dd>
+        <dt><span sportechappTranslate="sportechappApp.bondingTrainer.bonding">Bonding</span></dt>
+        <dd>
+          <div *ngIf="bondingTrainer.bonding">
+            <a [routerLink]="['/bonding', bondingTrainer.bonding?.id, 'view']">{{ bondingTrainer.bonding?.bondingType }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bonding-trainer', bondingTrainer.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

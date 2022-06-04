@@ -1,0 +1,38 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604043050",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "trainee",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Trainee",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "trainee",
+      "relationshipName": "customer",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "statusName",
+      "otherEntityName": "trainingStatus",
+      "otherEntityRelationshipName": "trainee",
+      "relationshipName": "trainingStatus",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "course",
+      "otherEntityRelationshipName": "trainee",
+      "relationshipName": "course",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

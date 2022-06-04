@@ -1,0 +1,41 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604043750",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "classroom_type",
+  "fields": [
+    {
+      "fieldName": "typeClassroom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "classroomDescription",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "classroomState",
+      "fieldType": "State",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE (Activo),INACTIVE (Inactivo)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ClassroomType",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "classroom",
+      "otherEntityRelationshipName": "classroomType",
+      "relationshipName": "classroom",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

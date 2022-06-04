@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="sportechapp-module-heading"
+        data-cy="ModuleCreateUpdateHeading"
+        sportechappTranslate="sportechappApp.module.home.createOrEditLabel"
+      >
+        Create or edit a Module
+      </h2>
+
+      <div>
+        <sportechapp-alert-error></sportechapp-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" sportechappTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.module.moduleName" for="field_moduleName">Module Name</label>
+          <input
+            type="number"
+            class="form-control"
+            name="moduleName"
+            id="field_moduleName"
+            data-cy="moduleName"
+            formControlName="moduleName"
+          />
+          <div *ngIf="editForm.get('moduleName')!.invalid && (editForm.get('moduleName')!.dirty || editForm.get('moduleName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('moduleName')?.errors?.required"
+              sportechappTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('moduleName')?.errors?.number"
+              sportechappTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" sportechappTranslate="sportechappApp.module.moduleState" for="field_moduleState">Module State</label>
+          <input
+            type="text"
+            class="form-control"
+            name="moduleState"
+            id="field_moduleState"
+            data-cy="moduleState"
+            formControlName="moduleState"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span sportechappTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

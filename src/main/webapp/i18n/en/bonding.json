@@ -1,0 +1,27 @@
+{
+  "sportechappApp": {
+    "bonding": {
+      "home": {
+        "title": "Bondings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bonding",
+        "createOrEditLabel": "Create or edit a Bonding",
+        "notFound": "No Bondings found"
+      },
+      "created": "A new Bonding is created with identifier {{ param }}",
+      "updated": "A Bonding is updated with identifier {{ param }}",
+      "deleted": "A Bonding is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bonding {{ id }}?"
+      },
+      "detail": {
+        "title": "Bonding"
+      },
+      "id": "ID",
+      "bondingType": "Bonding Type",
+      "workingHours": "Working Hours",
+      "bondingState": "Bonding State",
+      "bondingTrainer": "Bonding Trainer"
+    }
+  }
+}

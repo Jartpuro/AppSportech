@@ -1,0 +1,56 @@
+{
+  "applications": ["sportechapp"],
+  "changelogDate": "20220604044950",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "bonding_trainer",
+  "fields": [
+    {
+      "fieldName": "startTime",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endTime",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BondingTrainer",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "boundingSchedule",
+      "otherEntityRelationshipName": "bondingTrainer",
+      "relationshipName": "boundingSchedule",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "yearNumber",
+      "otherEntityName": "year",
+      "otherEntityRelationshipName": "bondingTrainer",
+      "relationshipName": "year",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "trainer",
+      "otherEntityRelationshipName": "bondingTrainer",
+      "relationshipName": "trainer",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "bondingType",
+      "otherEntityName": "bonding",
+      "otherEntityRelationshipName": "bondingTrainer",
+      "relationshipName": "bonding",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,26 @@
+{
+  "sportechappApp": {
+    "scheduleVersion": {
+      "home": {
+        "title": "Schedule Versions",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Schedule Version",
+        "createOrEditLabel": "Crear o editar Schedule Version",
+        "notFound": "Ningún Schedule Versions encontrado"
+      },
+      "created": "Un nuevo Schedule Version ha sido creado con el identificador {{ param }}",
+      "updated": "Un Schedule Version ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Schedule Version ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Schedule Version {{ id }}?"
+      },
+      "detail": {
+        "title": "Schedule Version"
+      },
+      "id": "ID",
+      "versionNumber": "Version Number",
+      "versionState": "Version State",
+      "schedule": "Schedule"
+    }
+  }
+}
