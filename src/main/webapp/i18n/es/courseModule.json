@@ -2,25 +2,25 @@
   "sportechappApp": {
     "courseModule": {
       "home": {
-        "title": "Course Modules",
+        "title": "Curso del Modulo",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Course Module",
-        "createOrEditLabel": "Crear o editar Course Module",
-        "notFound": "Ningún Course Modules encontrado"
+        "createLabel": "Crear nuevo Curso del Modulo",
+        "createOrEditLabel": "Crear o editar Curso del Modulo",
+        "notFound": "Ningún Curso del Modulo encontrado"
       },
-      "created": "Un nuevo Course Module ha sido creado con el identificador {{ param }}",
-      "updated": "Un Course Module ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Course Module ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Curso del Modulo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Curso del Modulo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Curso del Modulo ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Course Module {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Curso del Modulo {{ id }}?"
       },
       "detail": {
-        "title": "Course Module"
+        "title": "Curso del Modulo"
       },
       "id": "ID",
-      "schedule": "Schedule",
-      "course": "Course",
-      "module": "Module"
+      "schedule": "Horario",
+      "course": "Curso",
+      "module": "Modulo"
     }
   }
 }

@@ -2,33 +2,33 @@
   "sportechappApp": {
     "customer": {
       "home": {
-        "title": "Customers",
+        "title": "Cliente",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Customer",
-        "createOrEditLabel": "Crear o editar Customer",
-        "notFound": "Ningún Customers encontrado"
+        "createLabel": "Crear nuevo Cliente",
+        "createOrEditLabel": "Crear o editar Cliente",
+        "notFound": "Ningún Cliente encontrado"
       },
-      "created": "Un nuevo Customer ha sido creado con el identificador {{ param }}",
-      "updated": "Un Customer ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Customer ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Cliente ha sido creado con el identificador {{ param }}",
+      "updated": "Un Cliente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Cliente ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Customer {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Cliente {{ id }}?"
       },
       "detail": {
-        "title": "Customer"
+        "title": "Cliente"
       },
       "id": "ID",
-      "documentNumber": "Document Number",
-      "firstName": "First Name",
-      "secondName": "Second Name",
-      "fisrtLastName": "Fisrt Last Name",
-      "secondLastName": "Second Last Name",
-      "user": "User",
-      "trainee": "Trainee",
+      "documentNumber": "Numero de documento",
+      "firstName": "Primer nombre",
+      "secondName": "Segundo nombre",
+      "fisrtLastName": "Primer apellido",
+      "secondLastName": "Segundo apellido",
+      "user": "Usuario",
+      "trainee": "Estudiante",
       "logError": "Log Error",
       "logAudit": "Log Audit",
-      "trainer": "Trainer",
-      "documentType": "Document Type"
+      "trainer": "Entrenador",
+      "documentType": "Tipo de documento"
     }
   }
 }

@@ -2,25 +2,25 @@
   "sportechappApp": {
     "scheduleVersion": {
       "home": {
-        "title": "Schedule Versions",
+        "title": "Version del Horario",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Schedule Version",
-        "createOrEditLabel": "Crear o editar Schedule Version",
-        "notFound": "Ningún Schedule Versions encontrado"
+        "createLabel": "Crear nueva Version del Horario",
+        "createOrEditLabel": "Crear o editar Version del Horario",
+        "notFound": "Ninguna Version del Horario encontrado"
       },
-      "created": "Un nuevo Schedule Version ha sido creado con el identificador {{ param }}",
-      "updated": "Un Schedule Version ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Schedule Version ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Version del Horario ha sido creado con el identificador {{ param }}",
+      "updated": "Una Version del Horario ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Una Version del Horario ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Schedule Version {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Version del Horario{{ id }}?"
       },
       "detail": {
-        "title": "Schedule Version"
+        "title": "Version del Horario"
       },
       "id": "ID",
-      "versionNumber": "Version Number",
-      "versionState": "Version State",
-      "schedule": "Schedule"
+      "versionNumber": "Codigo de la version",
+      "versionState": "Estado de la version",
+      "schedule": "Horario"
     }
   }
 }

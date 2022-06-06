@@ -2,26 +2,26 @@
   "sportechappApp": {
     "campus": {
       "home": {
-        "title": "Campuses",
+        "title": "Sede",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Campus",
-        "createOrEditLabel": "Crear o editar Campus",
-        "notFound": "Ningún Campuses encontrado"
+        "createLabel": "Crear nueva Sede",
+        "createOrEditLabel": "Crear o editar Sede",
+        "notFound": "Ninguna Sede encontrada"
       },
-      "created": "Un nuevo Campus ha sido creado con el identificador {{ param }}",
-      "updated": "Un Campus ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Campus ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Sede ha sido creada con el identificador {{ param }}",
+      "updated": "Una Sede ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Sede ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Campus {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Sede {{ id }}?"
       },
       "detail": {
-        "title": "Campus"
+        "title": "Sede"
       },
       "id": "ID",
-      "campusName": "Campus Name",
-      "campusAddress": "Campus Address",
-      "campusState": "Campus State",
-      "classroom": "Classroom"
+      "campusName": "Nombre de la sede",
+      "campusAddress": "Dirección de la sede",
+      "campusState": "Estado de la sede",
+      "classroom": "nombre del aula"
     }
   }
 }

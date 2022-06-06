@@ -2,28 +2,28 @@
   "sportechappApp": {
     "trainingProgram": {
       "home": {
-        "title": "Training Programs",
+        "title": "Programa de entrenamiento",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Training Program",
-        "createOrEditLabel": "Crear o editar Training Program",
-        "notFound": "Ningún Training Programs encontrado"
+        "createLabel": "Crear nuevo Programa de entrenamiento",
+        "createOrEditLabel": "Crear o editar Programa de entrenamiento",
+        "notFound": "Ningún Programa de entrenamiento encontrado"
       },
-      "created": "Un nuevo Training Program ha sido creado con el identificador {{ param }}",
-      "updated": "Un Training Program ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Training Program ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Programa de entrenamiento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Programa de entrenamiento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Programa de entrenamiento ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Training Program {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Programa de entrenamiento {{ id }}?"
       },
       "detail": {
-        "title": "Training Program"
+        "title": "Programa de entrenamiento"
       },
       "id": "ID",
-      "programCode": "Program Code",
-      "programVersion": "Program Version",
-      "programName": "Program Name",
-      "programInitials": "Program Initials",
-      "programState": "Program State",
-      "course": "Course"
+      "programCode": "Codigo del programa",
+      "programVersion": "Version del Programa de entrenamiento",
+      "programName": "Descripcion del Programa de entrenamiento",
+      "programInitials": "Sigla del Programa de entrenamiento",
+      "programState": "Estado del Programa de entrenamiento",
+      "course": "Curso"
     }
   }
 }

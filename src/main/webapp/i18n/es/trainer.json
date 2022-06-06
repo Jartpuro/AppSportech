@@ -2,27 +2,27 @@
   "sportechappApp": {
     "trainer": {
       "home": {
-        "title": "Trainers",
+        "title": "Entrenador",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Trainer",
-        "createOrEditLabel": "Crear o editar Trainer",
-        "notFound": "Ningún Trainers encontrado"
+        "createLabel": "Crear nuevo Entrenador",
+        "createOrEditLabel": "Crear o editar Entrenador",
+        "notFound": "Ningún Entrenador encontrado"
       },
-      "created": "Un nuevo Trainer ha sido creado con el identificador {{ param }}",
-      "updated": "Un Trainer ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Trainer ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Entrenador ha sido creado con el identificador {{ param }}",
+      "updated": "Un Entrenador ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Entrenador ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Trainer {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Entrenador {{ id }}?"
       },
       "detail": {
-        "title": "Trainer"
+        "title": "Entrenador"
       },
       "id": "ID",
-      "trainerState": "Trainer State",
-      "areaTrainer": "Area Trainer",
-      "bondingTrainer": "Bonding Trainer",
-      "schedule": "Schedule",
-      "customer": "Customer"
+      "trainerState": "Estado del Entrenador",
+      "areaTrainer": "Area funcional del Entrenador",
+      "bondingTrainer": "Vinculacion del Entrenador",
+      "schedule": "Horario",
+      "customer": "Cliente"
     }
   }
 }

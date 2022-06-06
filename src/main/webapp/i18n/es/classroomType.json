@@ -2,26 +2,26 @@
   "sportechappApp": {
     "classroomType": {
       "home": {
-        "title": "Classroom Types",
+        "title": "Tipo de Salón de clase",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Classroom Type",
-        "createOrEditLabel": "Crear o editar Classroom Type",
-        "notFound": "Ningún Classroom Types encontrado"
+        "createLabel": "Crear nuevo Tipo de Salón de clase",
+        "createOrEditLabel": "Crear o editar Tipo de Salón de clase",
+        "notFound": "Ningún Tipo de Salón de clase encontrado"
       },
-      "created": "Un nuevo Classroom Type ha sido creado con el identificador {{ param }}",
-      "updated": "Un Classroom Type ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Classroom Type ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Tipo de Salón de clase ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo de Salón de clase ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo de Salón de clase ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Classroom Type {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Tipo de Salón de clase {{ id }}?"
       },
       "detail": {
-        "title": "Classroom Type"
+        "title": "Tipo de Salón de clase"
       },
       "id": "ID",
-      "typeClassroom": "Type Classroom",
-      "classroomDescription": "Classroom Description",
-      "classroomState": "Classroom State",
-      "classroom": "Classroom"
+      "typeClassroom": "Tipo de Salón de clase",
+      "classroomDescription": "Descripcion Tipo de Salón de clase",
+      "classroomState": "Estado Tipo de Salón de clase",
+      "classroom": "Aula"
     }
   }
 }

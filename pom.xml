@@ -26,8 +26,8 @@
         <!-- Build properties -->
         <maven.version>3.8.5</maven.version>
         <java.version>11</java.version>
-        <node.version>v16.14.0</node.version>
-        <npm.version>8.6.0</npm.version>
+        <node.version>v16.15.0</node.version>
+        <npm.version>8.7.0</npm.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

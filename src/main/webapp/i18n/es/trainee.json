@@ -2,25 +2,25 @@
   "sportechappApp": {
     "trainee": {
       "home": {
-        "title": "Trainees",
+        "title": "Estudiante",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Trainee",
-        "createOrEditLabel": "Crear o editar Trainee",
-        "notFound": "Ningún Trainees encontrado"
+        "createLabel": "Crear nuevo Estudiante",
+        "createOrEditLabel": "Crear o editar Estudiante",
+        "notFound": "Ningún Estudiante encontrado"
       },
-      "created": "Un nuevo Trainee ha sido creado con el identificador {{ param }}",
-      "updated": "Un Trainee ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Trainee ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Estudiante ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estudiante ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estudiante ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Trainee {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Estudiante {{ id }}?"
       },
       "detail": {
-        "title": "Trainee"
+        "title": "Estudiante"
       },
       "id": "ID",
-      "customer": "Customer",
-      "trainingStatus": "Training Status",
-      "course": "Course"
+      "customer": "Cliente",
+      "trainingStatus": "Estado del entrenamiento",
+      "course": "Curso"
     }
   }
 }

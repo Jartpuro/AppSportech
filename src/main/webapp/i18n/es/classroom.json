@@ -2,28 +2,28 @@
   "sportechappApp": {
     "classroom": {
       "home": {
-        "title": "Classrooms",
+        "title": "Salón de clase",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Classroom",
-        "createOrEditLabel": "Crear o editar Classroom",
-        "notFound": "Ningún Classrooms encontrado"
+        "createLabel": "Crear nuevo Salón de clase",
+        "createOrEditLabel": "Crear o editar Salón de clase",
+        "notFound": "Ningún Salón de clase encontrado"
       },
-      "created": "Un nuevo Classroom ha sido creado con el identificador {{ param }}",
-      "updated": "Un Classroom ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Classroom ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Salón de clase ha sido creado con el identificador {{ param }}",
+      "updated": "Un Salón de clase ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Salón de clase ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Classroom {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Salón de clase {{ id }}?"
       },
       "detail": {
-        "title": "Classroom"
+        "title": "Salón de clase"
       },
       "id": "ID",
-      "classroomNumber": "Classroom Number",
-      "classroomDescription": "Classroom Description",
-      "classroomState": "Classroom State",
-      "schedule": "Schedule",
-      "classroomType": "Classroom Type",
-      "campus": "Campus"
+      "classroomNumber": "Codigo del Salón de clase",
+      "classroomDescription": "Descripcion del Salón de clase",
+      "classroomState": "Estado del Salón de clase",
+      "schedule": "Horario",
+      "classroomType": "Tipo Salón de clase",
+      "campus": "Sede"
     }
   }
 }

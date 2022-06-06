@@ -2,30 +2,30 @@
   "sportechappApp": {
     "course": {
       "home": {
-        "title": "Courses",
+        "title": "Curso",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Course",
-        "createOrEditLabel": "Crear o editar Course",
-        "notFound": "Ningún Courses encontrado"
+        "createLabel": "Crear nuevo Curso",
+        "createOrEditLabel": "Crear o editar Curso",
+        "notFound": "Ningún Curso encontrado"
       },
-      "created": "Un nuevo Course ha sido creado con el identificador {{ param }}",
-      "updated": "Un Course ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Course ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Curso ha sido creado con el identificador {{ param }}",
+      "updated": "Un Curso ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Curso ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Course {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Curso {{ id }}?"
       },
       "detail": {
-        "title": "Course"
+        "title": "Curso"
       },
       "id": "ID",
-      "courseNumber": "Course Number",
-      "startDate": "Start Date",
-      "endDate": "End Date",
-      "route": "Route",
-      "trainee": "Trainee",
-      "courseModule": "Course Module",
-      "courseStatus": "Course Status",
-      "trainingProgram": "Training Program"
+      "courseNumber": "Codigo del Curso",
+      "startDate": "Fecha de inicio",
+      "endDate": "Fecha de fin",
+      "route": "Modulo",
+      "trainee": "Estudiante",
+      "courseModule": "Curso del Modulo",
+      "courseStatus": "Estado del Curso",
+      "trainingProgram": "Programa de entrenamiento"
     }
   }
 }

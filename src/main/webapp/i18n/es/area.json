@@ -2,25 +2,25 @@
   "sportechappApp": {
     "area": {
       "home": {
-        "title": "Areas",
+        "title": "Area funcional",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Area",
-        "createOrEditLabel": "Crear o editar Area",
-        "notFound": "Ningún Areas encontrado"
+        "createLabel": "Crear nueva Area funcional",
+        "createOrEditLabel": "Crear o editar Area funcional",
+        "notFound": "Ningún Area funcional encontrada"
       },
-      "created": "Un nuevo Area ha sido creado con el identificador {{ param }}",
-      "updated": "Un Area ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Area ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Area funcional ha sido creado con el identificador {{ param }}",
+      "updated": "Una nueva ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Una Area funcional ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Area {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Area funcional {{ id }}?"
       },
       "detail": {
-        "title": "Area"
+        "title": "Area funcional"
       },
       "id": "ID",
-      "areaName": "Area Name",
+      "areaName": "Nombre del area funcional",
       "urlLogo": "Url Logo",
-      "areaState": "Area State",
+      "areaState": "Estado del area funcional",
       "areaTrainer": "Area Trainer"
     }
   }

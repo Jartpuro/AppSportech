@@ -2,25 +2,25 @@
   "sportechappApp": {
     "year": {
       "home": {
-        "title": "Years",
+        "title": "Año",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Year",
-        "createOrEditLabel": "Crear o editar Year",
-        "notFound": "Ningún Years encontrado"
+        "createLabel": "Crear nuevo Año",
+        "createOrEditLabel": "Crear o editar Año",
+        "notFound": "Ningún Año encontrado"
       },
-      "created": "Un nuevo Year ha sido creado con el identificador {{ param }}",
-      "updated": "Un Year ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Year ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Año ha sido creado con el identificador {{ param }}",
+      "updated": "Un Año ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Año ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Year {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Año {{ id }}?"
       },
       "detail": {
-        "title": "Year"
+        "title": "Año"
       },
       "id": "ID",
-      "yearNumber": "Year Number",
-      "yearState": "Year State",
-      "bondingTrainer": "Bonding Trainer"
+      "yearNumber": "Año numero",
+      "yearState": "Estado año",
+      "bondingTrainer": "Vinculacion del entrenador"
     }
   }
 }

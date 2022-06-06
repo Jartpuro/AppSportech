@@ -2,26 +2,26 @@
   "sportechappApp": {
     "documentType": {
       "home": {
-        "title": "Document Types",
+        "title": "Tipo de documento",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Document Type",
-        "createOrEditLabel": "Crear o editar Document Type",
-        "notFound": "Ningún Document Types encontrado"
+        "createLabel": "Crear nuevo Tipo de documento",
+        "createOrEditLabel": "Crear o editar Tipo de documento",
+        "notFound": "Ningún Tipo de documento encontrado"
       },
-      "created": "Un nuevo Document Type ha sido creado con el identificador {{ param }}",
-      "updated": "Un Document Type ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Document Type ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Tipo de documento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo de documento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo de documento ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Document Type {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Tipo de documento {{ id }}?"
       },
       "detail": {
-        "title": "Document Type"
+        "title": "Tipo de documento"
       },
       "id": "ID",
-      "initials": "Initials",
-      "documentName": "Document Name",
-      "stateDocumentType": "State Document Type",
-      "customer": "Customer"
+      "initials": "Sigla",
+      "documentName": "Nombre del documento",
+      "stateDocumentType": "Estado Tipo de documento",
+      "customer": "Cliente"
     }
   }
 }

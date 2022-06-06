@@ -2,23 +2,23 @@
   "sportechappApp": {
     "boundingSchedule": {
       "home": {
-        "title": "Bounding Schedules",
+        "title": "Horario de la vinculación",
         "refreshListLabel": "Refrescar lista",
         "createLabel": "Crear nuevo Bounding Schedule",
-        "createOrEditLabel": "Crear o editar Bounding Schedule",
-        "notFound": "Ningún Bounding Schedules encontrado"
+        "createOrEditLabel": "Crear o editar Horario de la vinculación",
+        "notFound": "Ningún Horario de la vinculación encontrado"
       },
-      "created": "Un nuevo Bounding Schedule ha sido creado con el identificador {{ param }}",
-      "updated": "Un Bounding Schedule ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Bounding Schedule ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Horario de la vinculación ha sido creado con el identificador {{ param }}",
+      "updated": "Un Horario de la vinculación ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Horario de la vinculación ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Bounding Schedule {{ id }}?"
+        "question": "¿Seguro que quiere eliminar  el Horario de la vinculación {{ id }}?"
       },
       "detail": {
-        "title": "Bounding Schedule"
+        "title": "Horario de la vinculación"
       },
       "id": "ID",
-      "bondingTrainer": "Bonding Trainer"
+      "bondingTrainer": "Vinculacion del entrenador"
     }
   }
 }

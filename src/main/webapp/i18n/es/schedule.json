@@ -2,30 +2,30 @@
   "sportechappApp": {
     "schedule": {
       "home": {
-        "title": "Schedules",
+        "title": "Horario",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Schedule",
+        "createLabel": "Crear nuevo Horario",
         "createOrEditLabel": "Crear o editar Schedule",
-        "notFound": "Ningún Schedules encontrado"
+        "notFound": "Ningún Horario encontrado"
       },
-      "created": "Un nuevo Schedule ha sido creado con el identificador {{ param }}",
-      "updated": "Un Schedule ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Schedule ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Horario ha sido creado con el identificador {{ param }}",
+      "updated": "Un Horario ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Horario ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Schedule {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Horario {{ id }}?"
       },
       "detail": {
-        "title": "Schedule"
+        "title": "Horario"
       },
       "id": "ID",
-      "startTime": "Start Time",
-      "endTime": "End Time",
-      "scheduleVersion": "Schedule Version",
-      "modality": "Modality",
-      "day": "Day",
-      "courseModule": "Course Module",
-      "classroom": "Classroom",
-      "trainer": "Trainer"
+      "startTime": "Fecha de inicio",
+      "endTime": "Horario",
+      "scheduleVersion": "Version del Horario",
+      "modality": "Modalidad",
+      "day": "Dia",
+      "courseModule": "Curso del modulo",
+      "classroom": "Salon del Clase",
+      "trainer": "Entrenador"
     }
   }
 }

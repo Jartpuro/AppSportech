@@ -1,13 +1,13 @@
 {
   "home": {
-    "title": "¡Bienvenido, Java Hipster!",
-    "subtitle": "Esta es su página de inicio",
+    "title": "¡Bienvenido, somos Sportech Offer!",
+    "subtitle": "Aqui comienza tu aventura",
     "logged": {
       "message": "Está conectado como \"{{username}}\"."
     },
-    "question": "Si tiene preguntas sobre JHipster:",
+    "question": "Deseas saber más de nosotros:",
     "link": {
-      "homepage": "Página de inicio de JHipster",
+      "homepage": "Fanpage Facebook Sportech Offer",
       "stackoverflow": "JHipster en Stack Overflow",
       "bugtracker": "JHipster seguimiento de errores",
       "chat": "Sala de chat pública de JHipster",

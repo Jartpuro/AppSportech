@@ -2,28 +2,28 @@
   "sportechappApp": {
     "bondingTrainer": {
       "home": {
-        "title": "Bonding Trainers",
+        "title": "Vinculación de entrenador",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Bonding Trainer",
-        "createOrEditLabel": "Crear o editar Bonding Trainer",
-        "notFound": "Ningún Bonding Trainers encontrado"
+        "createLabel": "Crear nuevo Vinculación de entrenador",
+        "createOrEditLabel": "Crear o editar Vinculación de entrenador",
+        "notFound": "Ningúna Vinculación de entrenador encontrada"
       },
-      "created": "Un nuevo Bonding Trainer ha sido creado con el identificador {{ param }}",
-      "updated": "Un Bonding Trainer ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Bonding Trainer ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Vinculación de entrenador ha sido creada con el identificador {{ param }}",
+      "updated": "Una Vinculación de entrenador ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Vinculación de entrenador ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Bonding Trainer {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Vinculación de entrenador {{ id }}?"
       },
       "detail": {
-        "title": "Bonding Trainer"
+        "title": "Vinculación de entrenador"
       },
       "id": "ID",
-      "startTime": "Start Time",
-      "endTime": "End Time",
-      "boundingSchedule": "Bounding Schedule",
-      "year": "Year",
-      "trainer": "Trainer",
-      "bonding": "Bonding"
+      "startTime": "Fecha de inicio",
+      "endTime": "Fecha de fin",
+      "boundingSchedule": "Horario de la vinculacion",
+      "year": "Año",
+      "trainer": "Entrenador",
+      "bonding": "Tipo vinculación"
     }
   }
 }

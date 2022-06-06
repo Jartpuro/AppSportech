@@ -2,20 +2,20 @@
   "sportechappApp": {
     "moduleSchedule": {
       "home": {
-        "title": "Module Schedules",
+        "title": "Horario del Modulo",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Module Schedule",
-        "createOrEditLabel": "Crear o editar Module Schedule",
-        "notFound": "Ningún Module Schedules encontrado"
+        "createLabel": "Crear nuevo Horario del Modulo",
+        "createOrEditLabel": "Crear o editar Horario del Modulo",
+        "notFound": "Ningún Horario del Modulo encontrado"
       },
-      "created": "Un nuevo Module Schedule ha sido creado con el identificador {{ param }}",
-      "updated": "Un Module Schedule ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Module Schedule ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Horario del Modulo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Horario del Modulo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Horario del Modulo ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Module Schedule {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Horario del Modulo {{ id }}?"
       },
       "detail": {
-        "title": "Module Schedule"
+        "title": "Horario del Modulo"
       },
       "id": "ID",
       "module": "Module"

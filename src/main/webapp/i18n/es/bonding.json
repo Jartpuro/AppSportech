@@ -2,26 +2,26 @@
   "sportechappApp": {
     "bonding": {
       "home": {
-        "title": "Bondings",
+        "title": "tipo de vinculacion",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Bonding",
+        "createLabel": "Crear nuevo tipo de vinculacion",
         "createOrEditLabel": "Crear o editar Bonding",
-        "notFound": "Ningún Bondings encontrado"
+        "notFound": "Ningún tipo de vinculacion encontrado"
       },
-      "created": "Un nuevo Bonding ha sido creado con el identificador {{ param }}",
-      "updated": "Un Bonding ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Bonding ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo tipo de vinculacion ha sido creado con el identificador {{ param }}",
+      "updated": "Un tipo de vinculacion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un tipo de vinculacion ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Bonding {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el tipo de vinculacion {{ id }}?"
       },
       "detail": {
-        "title": "Bonding"
+        "title": "tipo de vinculacion"
       },
       "id": "ID",
-      "bondingType": "Bonding Type",
-      "workingHours": "Working Hours",
-      "bondingState": "Bonding State",
-      "bondingTrainer": "Bonding Trainer"
+      "bondingType": "select tipo de vinculacion",
+      "workingHours": "Horas trabajadas",
+      "bondingState": "Estado del tipo de vinculacion",
+      "bondingTrainer": "Vinculación del entrenador"
     }
   }
 }
